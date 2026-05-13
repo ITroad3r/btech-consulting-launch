@@ -1,26 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Btech Consulting — Audit IT, Conseil & Offshoring à Paris" },
+      {
+        name: "description",
+        content:
+          "Btech Consulting : cabinet boutique d'Audit IT, Conseil Risques Informatiques et Offshoring à Paris (8ᵉ, La Défense, Boulogne-Billancourt). GRC, ISO 27001, RGPD, Cloud.",
+      },
+      { property: "og:title", content: "Btech Consulting — Audit IT & Offshoring Paris" },
+      {
+        property: "og:description",
+        content:
+          "Partenaire stratégique pour la transformation digitale, la conformité GRC et l'infogérance sur mesure à Paris.",
+      },
+      { property: "og:type", content: "website" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <Hero />
+      {/* Sections suivantes : Services, À Propos, Témoignages, Contact (à venir) */}
+    </main>
+  );
 }
