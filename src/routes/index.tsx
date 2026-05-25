@@ -6,6 +6,8 @@ import {
   AuditConseil,
   Offshoring,
   WhyBtech,
+  Industries,
+  Testimonials,
   Contact,
   Footer,
 } from "@/components/Sections";
@@ -13,17 +15,17 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Btech Consulting — Audit IT, Conseil & Offshoring à Paris" },
+      { title: "Btech Consulting | IT Audit & Offshoring Experts in Paris" },
       {
         name: "description",
         content:
-          "Btech Consulting : cabinet boutique d'Audit IT, Conseil Risques Informatiques et Offshoring à Paris (8ᵉ, La Défense, Boulogne-Billancourt). GRC, ISO 27001, RGPD, Cloud.",
+          "Btech Consulting is a Paris-based IT audit, consulting, and offshoring firm helping businesses transform their technology landscape with precision and expertise.",
       },
-      { property: "og:title", content: "Btech Consulting — Audit IT & Offshoring Paris" },
+      { property: "og:title", content: "Btech Consulting | IT Audit & Offshoring — Paris" },
       {
         property: "og:description",
         content:
-          "Partenaire stratégique pour la transformation digitale, la conformité GRC et l'infogérance sur mesure à Paris.",
+          "IT Audit, Strategic Consulting, and IT Offshoring — headquartered in Paris, serving Europe and beyond.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -40,6 +42,8 @@ function Index() {
       <AuditConseil />
       <Offshoring />
       <WhyBtech />
+      <Industries />
+      <Testimonials />
       <Contact />
       <Footer />
     </main>
