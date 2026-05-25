@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import parisOffice from "@/assets/paris-office.jpg";
+import logoFooter from "@/assets/btech-logo.jpeg";
 
 /* ---------- Section wrapper ---------- */
 function Section({
@@ -374,10 +375,8 @@ export function Footer() {
   return (
     <footer className="border-t border-border px-6 py-12">
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-2.5">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-mint flex items-center justify-center font-display font-bold text-background text-sm">
-            B
-          </div>
+        <div className="flex items-center gap-3">
+          <img src={logoFooter} alt="Btech Consulting" className="h-7 w-auto" />
           <div className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Btech Consulting · Paris
           </div>

@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -34,8 +35,8 @@
   --color-mint: var(--mint);
   --color-mint-foreground: var(--mint-foreground);
 
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-display: "Helvetica Now Display", "Helvetica Neue", "Inter", sans-serif;
+  --font-sans: "Urbanist", system-ui, sans-serif;
+  --font-display: "Urbanist", system-ui, sans-serif;
 
   --shadow-glow: 0 0 40px -10px var(--primary);
   --shadow-mint: 0 0 30px -10px var(--mint);
@@ -44,44 +45,39 @@
 :root {
   --radius: 0.75rem;
 
-  /* Deep Midnight Blue base */
-  --background: oklch(0.18 0.04 260);
-  --foreground: oklch(0.97 0.01 250);
+  /* Light, airy background inspired by Btech logo */
+  --background: oklch(0.99 0.005 230);
+  --foreground: oklch(0.22 0.05 240);
 
-  --card: oklch(0.22 0.04 260 / 0.5);
-  --card-foreground: oklch(0.97 0.01 250);
+  --card: oklch(1 0 0 / 0.7);
+  --card-foreground: oklch(0.22 0.05 240);
 
-  --popover: oklch(0.22 0.04 260);
-  --popover-foreground: oklch(0.97 0.01 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.05 240);
 
-  /* Electric Pulse #635BFF */
-  --primary: oklch(0.58 0.22 280);
+  /* Btech soft sky blue (#7BB7DE-ish) */
+  --primary: oklch(0.68 0.12 235);
   --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.28 0.04 260);
-  --secondary-foreground: oklch(0.97 0.01 250);
+  --secondary: oklch(0.96 0.015 230);
+  --secondary-foreground: oklch(0.28 0.05 240);
 
-  --muted: oklch(0.26 0.03 260);
-  --muted-foreground: oklch(0.72 0.02 255);
+  --muted: oklch(0.96 0.01 230);
+  --muted-foreground: oklch(0.5 0.03 240);
 
-  --accent: oklch(0.32 0.05 270);
-  --accent-foreground: oklch(0.97 0.01 250);
+  --accent: oklch(0.94 0.03 235);
+  --accent-foreground: oklch(0.28 0.05 240);
 
-  /* Carbon Mint #00FFC2 */
-  --mint: oklch(0.92 0.18 175);
-  --mint-foreground: oklch(0.18 0.04 260);
+  /* Deeper logo blue used as secondary accent (replaces mint) */
+  --mint: oklch(0.48 0.13 245);
+  --mint-foreground: oklch(0.99 0 0);
 
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
 
-  --border: oklch(1 0 0 / 0.08);
-  --input: oklch(1 0 0 / 0.12);
-  --ring: oklch(0.58 0.22 280);
-}
-
-.dark {
-  --background: oklch(0.18 0.04 260);
-  --foreground: oklch(0.97 0.01 250);
+  --border: oklch(0.55 0.05 240 / 0.18);
+  --input: oklch(0.55 0.05 240 / 0.25);
+  --ring: oklch(0.68 0.12 235);
 }
 
 @layer base {
@@ -99,52 +95,54 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.58 0.22 280 / 0.18), transparent),
-      radial-gradient(ellipse 60% 40% at 90% 20%, oklch(0.92 0.18 175 / 0.06), transparent);
+      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.68 0.12 235 / 0.20), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 20%, oklch(0.48 0.13 245 / 0.10), transparent),
+      radial-gradient(ellipse 50% 40% at 10% 80%, oklch(0.68 0.12 235 / 0.10), transparent);
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+    font-weight: 600;
   }
 }
 
 @layer utilities {
   .glass {
-    background: color-mix(in oklab, var(--background) 55%, transparent);
+    background: color-mix(in oklab, white 70%, transparent);
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);
     border: 1px solid var(--color-border);
   }
 
   .glass-strong {
-    background: color-mix(in oklab, var(--background) 75%, transparent);
+    background: color-mix(in oklab, white 85%, transparent);
     backdrop-filter: blur(24px) saturate(160%);
     -webkit-backdrop-filter: blur(24px) saturate(160%);
     border: 1px solid var(--color-border);
   }
 
   .text-gradient {
-    background: linear-gradient(120deg, oklch(0.97 0.01 250) 0%, oklch(0.92 0.18 175) 60%, oklch(0.58 0.22 280) 100%);
+    background: linear-gradient(120deg, oklch(0.48 0.13 245) 0%, oklch(0.68 0.12 235) 60%, oklch(0.78 0.10 225) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .glow-primary {
-    box-shadow: 0 0 0 1px color-mix(in oklab, var(--primary) 40%, transparent),
-                0 10px 40px -10px color-mix(in oklab, var(--primary) 60%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--primary) 30%, transparent),
+                0 10px 40px -10px color-mix(in oklab, var(--primary) 50%, transparent);
   }
 
   .glow-mint {
-    box-shadow: 0 0 30px -8px color-mix(in oklab, var(--mint) 50%, transparent);
+    box-shadow: 0 0 30px -8px color-mix(in oklab, var(--mint) 40%, transparent);
   }
 
   .grid-bg {
     background-image:
-      linear-gradient(to right, oklch(1 0 0 / 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+      linear-gradient(to right, oklch(0.55 0.05 240 / 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.55 0.05 240 / 0.08) 1px, transparent 1px);
     background-size: 56px 56px;
     mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent 80%);
   }

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/btech-logo.jpeg";
 
 const links = [
   { to: "/", label: "Accueil" },
@@ -29,18 +30,14 @@ export function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between px-5 py-3">
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="relative h-9 w-9 rounded-lg bg-gradient-to-br from-primary to-mint flex items-center justify-center font-display font-bold text-background text-sm transition-transform group-hover:scale-105">
-              B
-              <span className="absolute -inset-1 rounded-lg bg-primary/30 blur-md -z-10 opacity-60 group-hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="leading-tight">
-              <div className="font-display font-semibold text-foreground text-[15px] tracking-tight">
-                Btech<span className="text-mint"> .</span>
-              </div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                Consulting
-              </div>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img
+              src={logo}
+              alt="Btech Consulting"
+              className="h-9 w-auto transition-transform group-hover:scale-105"
+            />
+            <div className="hidden sm:block text-[10px] uppercase tracking-[0.25em] text-muted-foreground border-l border-border pl-3">
+              Consulting
             </div>
           </Link>
 
