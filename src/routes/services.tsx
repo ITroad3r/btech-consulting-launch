@@ -344,8 +344,13 @@ function ServicesPage() {
         <div className="mx-auto max-w-5xl">
           <div className="text-xs uppercase tracking-[0.25em] text-primary">How We Work</div>
           <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold">
-            Our <span className="text-gradient">engagement model.</span>
+            Our <span className="text-gradient">five-phase methodology.</span>
           </h2>
+          <p className="mt-5 max-w-3xl text-muted-foreground leading-relaxed">
+            Every audit and consulting engagement follows the same structured,
+            transparent process — scoped to your context and delivered by a
+            senior consultant from start to finish.
+          </p>
           <div className="mt-12 grid md:grid-cols-5 gap-4">
             {steps.map((s, i) => (
               <div key={s.t} className="glass rounded-2xl p-6">
