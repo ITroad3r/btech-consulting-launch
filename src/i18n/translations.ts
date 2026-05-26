@@ -563,9 +563,8 @@ export const translations = {
       secondary: "Voir nos services",
       cards: [
         { k: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont", v: "Siège Btech Consulting" },
-        { k: "contact@btech-consulting.fr", v: "Réponse sous 24 h" },
+        { k: "contact@btech-consulting.com", v: "Réponse sous 24 h" },
         { k: "+33 (0) 6 50 31 27 50", v: "Lun–Ven · 9h–19h CET" },
-        { k: "Livraison mondiale", v: "Clients européens & internationaux" },
       ],
     },
     footer: {
