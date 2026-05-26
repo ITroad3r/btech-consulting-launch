@@ -397,7 +397,7 @@ export function Footer() {
             <p className="mt-5 text-sm text-muted-foreground leading-relaxed max-w-xs">{t.footer.tagline}</p>
             <div className="mt-6 flex items-center gap-3">
               {socials.filter((s) => s.url).map((s) => (
-                <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="h-9 w-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20 transition-colors">
+                <a key={s.label} href={s.url ?? "#"} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="h-9 w-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20 transition-colors">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d={s.path}/></svg>
                 </a>
               ))}
