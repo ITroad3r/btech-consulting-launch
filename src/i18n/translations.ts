@@ -730,7 +730,7 @@ export const translations = {
       sub: "Parlez-nous de votre défi IT. Un expert senior vous répond sous 24 heures ouvrées — sans engagement, sans pression.",
       cards: [
         { k: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont", v: "Siège Btech Consulting" },
-        { k: "contact@btech-consulting.fr", v: "Réponse sous 24 heures" },
+        { k: "contact@btech-consulting.com", v: "Réponse sous 24 heures" },
         { k: "+33 (0) 6 50 31 27 50", v: "Lun–Ven · 9h–19h CET" },
       ],
       fullName: "Nom complet",
