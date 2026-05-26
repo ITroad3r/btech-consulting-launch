@@ -11,10 +11,16 @@ export const Route = createFileRoute("/blog")({
     meta: [
       { title: "IT Insights & Expert Articles | Btech Consulting Blog — Paris" },
       { name: "description", content: "Read expert articles on IT audit, cybersecurity, digital transformation, and IT offshoring from the Btech Consulting team in Paris." },
+      { property: "og:title", content: "IT Insights & Expert Articles | Btech Consulting Blog" },
+      { property: "og:description", content: "Expert articles on IT audit, cybersecurity, digital transformation, and offshoring." },
+      { property: "og:url", content: "https://btech-consulting.com/blog" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://btech-consulting.com/blog" }],
   }),
   component: BlogPage,
 });
+
 
 function BlogPage() {
   const t = useT();
