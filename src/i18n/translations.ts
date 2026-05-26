@@ -755,6 +755,75 @@ export const translations = {
       submit: "Demander une consultation gratuite",
       disclaimer: "En soumettant ce formulaire, vous acceptez d'être contacté par Btech Consulting au sujet de votre demande. Nous ne partageons jamais vos données.",
     },
+    auditServices: [
+      {
+        title: "Audit Gouvernance IT & Conformité",
+        desc: "Évaluation indépendante de la gouvernance technologique de votre organisation — benchmarkée sur COBIT 2019, ITIL 4, ISO/IEC 38500 — avec une feuille de route claire, un reporting prêt pour le comité et un alignement réglementaire (RGPD, NIS2, DORA).",
+        items: ["Alignement stratégie IT / priorités du comité","Structure et efficacité du comité de pilotage IT","Cadre des politiques IT — exhaustivité et application","Gouvernance des contrats fournisseurs et tiers","Maturité du cadre de gestion des risques IT","Gouvernance du changement et des mises en production","Posture de conformité réglementaire (RGPD, NIS2, DORA)","Synthèse exécutive + scorecard de maturité COBIT + feuille de route de remédiation"],
+      },
+      {
+        title: "Évaluation des risques de cybersécurité",
+        desc: "Évaluation structurée et factuelle de votre posture de sécurité de l'information selon ISO/IEC 27001:2022 et le NIST Cybersecurity Framework — identification des vulnérabilités, évaluation des contrôles et plan d'amélioration priorisé orienté réduction réelle du risque.",
+        items: ["Revue du SMSI sur les 93 contrôles de l'Annexe A d'ISO 27001:2022","Revue des identités, accès et comptes à privilèges","Architecture de sécurité réseau et endpoints","Posture sécurité cloud (AWS, Azure, GCP)","Risque tiers et chaîne d'approvisionnement","Préparation à la détection, réponse et récupération aux incidents","Synthèse de la surface d'attaque externe","Heat map des risques et feuille de route 90 jours / 6 mois / 12 mois"],
+      },
+      {
+        title: "Conseil en transformation digitale",
+        desc: "Nous concevons avec vous des stratégies de transformation ancrées dans la réalité business — cadrées de façon réaliste et conçues pour livrer de la valeur mesurable à chaque étape, pas seulement en fin de programme.",
+        items: ["Analyse de l'architecture IT actuelle et de la dette technique","Benchmark de maturité digitale sur 5 dimensions","Stratégie cloud : public, privé, hybride, multi-cloud","Préparation et planification de migration cloud","Cartographie des opportunités d'automatisation, RPA et IA","Sélection fournisseurs et accompagnement RFP","Feuille de route phasée : quick wins 90 jours, constructions 6 mois, initiatives 12–24 mois","Modèle de gouvernance programme et RACI"],
+      },
+      {
+        title: "Conseil ERP & logiciels d'entreprise",
+        desc: "Supervision indépendante sur tout le cycle de vie ERP — de la sélection fournisseur au post-go-live — pour protéger votre investissement, maîtriser le risque de livraison et garder le programme aligné aux résultats business.",
+        items: ["Définition des exigences métier et conception du RFP","Évaluation fournisseurs, scoring et négociation contractuelle","Sélection du partenaire d'intégration","Gouvernance programme et mise en place du PMO","Stratégie de migration des données et qualité","Stratégie de tests, planification UAT et validation","Évaluation de la readiness go-live","Expérience SAP S/4HANA, MS Dynamics 365, Oracle NetSuite, Sage, Odoo, Salesforce"],
+      },
+      {
+        title: "Revue d'infrastructure IT",
+        desc: "Évaluation complète et indépendante de votre environnement technique — détection des goulets de performance, écarts de résilience, faiblesses de sécurité et opportunités d'optimisation des coûts on-prem, cloud et hybride.",
+        items: ["Architecture réseau, segmentation et accès distant","Revue des capacités serveur, cloud et stockage","DRP/PCA — atteignabilité des RTO/RPO","Intégrité des sauvegardes et tests de restauration","Conformité des actifs IT et licences logicielles","Recommandations d'optimisation des coûts cloud","Revue de l'environnement utilisateur et MDM","Feuille de route d'amélioration d'infrastructure priorisée"],
+      },
+      {
+        title: "Évaluation de conformité DORA",
+        desc: "Évaluation dédiée aux entités financières de l'UE et à leurs prestataires TIC critiques — benchmark de votre gouvernance TIC sur les cinq piliers DORA et feuille de route de conformité claire et priorisée.",
+        items: ["Pilier 1 — Revue du cadre de gestion des risques TIC","Pilier 2 — Classification et workflows de notification des incidents TIC","Pilier 3 — Préparation aux tests de résilience et TLPT","Pilier 4 — Risque et concentration des tiers TIC","Pilier 5 — Renseignement de menaces et partage d'information","Registre des écarts pilier par pilier avec références réglementaires","Scorecard de maturité de conformité DORA","Pack de présentation pour le comité / superviseur"],
+      },
+      {
+        title: "Due Diligence IT pour M&A",
+        desc: "Due diligence IT indépendante et prête pour le comité, pour acquéreurs et investisseurs — quantification du risque technologique, de la dette technique et du coût d'intégration avant signature. Délais rapides 10–15 jours possibles pour transactions sensibles.",
+        items: ["Maturité de l'architecture IT et de l'infrastructure","Posture cybersécurité et exposition aux vulnérabilités","Conformité des licences logicielles et risque PI","Estimation de la dette technique et du coût de remédiation","Dépendances aux personnes-clés et risque talents IT","Qualité des données et conformité RGPD","Complexité et coût indicatif d'intégration","Synthèse des red flags pour la négociation"],
+      },
+    ],
+    offshoreServices: [
+      {
+        title: "Équipes de développement offshore",
+        desc: "Squads de développeurs dédiées et rigoureusement validées — front-end, back-end, full-stack, mobile, cloud, data et IA — assemblées, pilotées et qualité-contrôlées par Btech depuis Paris. Capacité opérationnelle en semaines, pas en mois.",
+        items: ["Front-end : React, Vue, Angular, Next.js, TypeScript","Back-end : Node.js, Python, Java, .NET, Go, Ruby on Rails","Mobile : iOS (Swift), Android (Kotlin), React Native, Flutter","Cloud & DevOps : AWS, Azure, GCP, Kubernetes, CI/CD","Spécialistes IA/ML et blockchain sur demande","Modèles dédié, team-extension ou au projet","Delivery Manager basé à Paris + daily standups en CET","Remplacement des sous-performants sans coût additionnel"],
+      },
+      {
+        title: "Support IT & Helpdesk managé",
+        desc: "Support N1/N2/N3 et NOC multilingue, piloté par SLA, livré en offshore et supervisé directement depuis Paris — réduisant typiquement les coûts de support de 40 à 60 % vs. un staffing interne équivalent.",
+        items: ["N1 — réinitialisations, provisioning, triage de premier niveau","N2 — support applicatif, matériel et réseau","N3 — infrastructure, serveurs et applications complexes","Supervision NOC 24/7 et premier niveau de réponse","Couverture : 8×5, 12×5 ou 24×7","Français, anglais et autres langues sur demande","Intégration ITSM : ServiceNow, Jira SM, Freshdesk, Zendesk","Reporting SLA mensuel + Service Delivery Manager basé à Paris"],
+      },
+      {
+        title: "Externalisation QA & tests logiciels",
+        desc: "Équipes QA embarquées ou par phase qui s'intègrent à votre processus Agile — réduisant les défauts en production, accélérant les releases et bâtissant une couverture d'automatisation durable.",
+        items: ["Tests manuels fonctionnels et end-to-end","Automatisation : Selenium, Playwright, Cypress, Appium","Tests d'API : Postman, REST-assured, contract testing","Performance & charge : JMeter, Gatling, k6","Tests mobile, cross-browser et cross-device","Tests de sécurité — OWASP Top 10","Tests d'accessibilité — WCAG 2.1","Transfert de suite de tests et intégration CI/CD"],
+      },
+      {
+        title: "Offshoring data engineering & analytics",
+        desc: "Data engineers, analytics engineers, développeurs BI et spécialistes ML — pilotés selon les standards européens depuis Paris. Capacité data évolutive sans le coût d'une équipe data science interne complète.",
+        items: ["Pipelines & ETL : Airflow, Prefect, Dagster, dbt, Spark","Cloud data : AWS Redshift/Glue, Azure Synapse, GCP BigQuery","Streaming : Kafka, Kinesis, Pub/Sub","BI : Power BI, Tableau, Looker, Metabase, Superset","ML/IA : Python, TensorFlow, PyTorch, intégration LLM","Gouvernance data, catalogage et lineage","Monitoring et reporting qualité data","Traitement RGPD-compatible (SCCs le cas échéant)"],
+      },
+      {
+        title: "Project Management as a Service",
+        desc: "Chefs de projet, directeurs de programme et Scrum Masters offshore expérimentés — pilotés depuis Paris et intégrés à votre rythme de livraison pour tenir délais, budget et alignement aux objectifs business.",
+        items: ["Chefs de projet senior certifiés PMP / Prince2","Scrum Masters certifiés (CSM / PSM)","Programme managers et analystes PMO","Frameworks : Agile/Scrum, SAFe, Waterfall, Hybride","Dashboards RAG hebdomadaires et reporting exécutif","Gestion des risques, points et dépendances","Suivi budgétaire et prévisions","Mise en place du PMO et outillage (Jira, Monday, MS Project)"],
+      },
+      {
+        title: "Audit & Revue de programme d'offshoring IT",
+        desc: "Audit indépendant et plan de remédiation pour les programmes offshore existants — détection des problèmes qualité, écarts de gouvernance et fuites de coûts, et benchmark de la performance fournisseur sur SLA et KPI convenus.",
+        items: ["Revue de performance SLA et KPI fournisseur","Efficacité de la gouvernance, du suivi et de l'escalade","Analyse qualité, défauts et reprise","Évaluation de la communication et des modes de travail","Benchmark des coûts et value-for-money","Transfert de connaissances et risque key-person","Revue contractuelle et clauses de sortie","Plan de remédiation pragmatique avec actions priorisées"],
+      },
+    ],
   },
 };
 
