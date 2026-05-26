@@ -9,10 +9,16 @@ export const Route = createFileRoute("/about")({
     meta: [
       { title: "About Btech Consulting | IT Audit & Offshoring Experts — Paris" },
       { name: "description", content: "Learn about Btech Consulting's story, mission, values, and the expert team behind our IT audit, consulting, and offshoring services in Paris, France." },
+      { property: "og:title", content: "About Btech Consulting | IT Audit & Offshoring Experts — Paris" },
+      { property: "og:description", content: "Our story, mission, values, and the expert team behind Btech Consulting in Paris." },
+      { property: "og:url", content: "https://btech-consulting.com/about" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://btech-consulting.com/about" }],
   }),
   component: AboutPage,
 });
+
 
 function AboutPage() {
   const t = useT();
