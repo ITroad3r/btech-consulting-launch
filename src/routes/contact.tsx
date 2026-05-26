@@ -53,32 +53,48 @@ function ContactPage() {
             </div>
           </div>
 
-          <form className="glass-strong rounded-3xl p-8 md:p-10 space-y-5" onSubmit={(e) => e.preventDefault()}>
+          <form
+            className="glass-strong rounded-3xl p-8 md:p-10 space-y-5"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const f = e.currentTarget as HTMLFormElement;
+              const name = (f.elements.namedItem("name") as HTMLInputElement)?.value || "";
+              const company = (f.elements.namedItem("company") as HTMLInputElement)?.value || "";
+              const email = (f.elements.namedItem("email") as HTMLInputElement)?.value || "";
+              const service = (f.elements.namedItem("service") as HTMLSelectElement)?.value || "";
+              const message = (f.elements.namedItem("message") as HTMLTextAreaElement)?.value || "";
+              const subject = encodeURIComponent(`Contact request — ${service || "General"} — ${name}`);
+              const body = encodeURIComponent(
+                `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`
+              );
+              window.location.href = `mailto:contact@btech-consulting.com?subject=${subject}&body=${body}`;
+            }}
+          >
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.fullName}</label>
-                <input type="text" required className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.fullNamePh} />
+                <input name="name" type="text" required className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.fullNamePh} />
               </div>
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.company}</label>
-                <input type="text" className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.companyPh} />
+                <input name="company" type="text" className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.companyPh} />
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.email}</label>
-                <input type="email" required className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.emailPh} />
+                <input name="email" type="email" required className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.emailPh} />
               </div>
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.service}</label>
-                <select className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors">
+                <select name="service" className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors">
                   {cp.services.map((s) => <option key={s}>{s}</option>)}
                 </select>
               </div>
             </div>
             <div>
               <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.message}</label>
-              <textarea rows={5} className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors resize-none" placeholder={cp.messagePh} />
+              <textarea name="message" rows={5} className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors resize-none" placeholder={cp.messagePh} />
             </div>
             <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm hover:scale-[1.01] active:scale-[0.99] transition-transform glow-primary">
               {cp.submit}

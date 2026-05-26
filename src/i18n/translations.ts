@@ -152,9 +152,8 @@ export const translations = {
       secondary: "View Our Services",
       cards: [
         { k: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont", v: "Btech Consulting HQ" },
-        { k: "contact@btech-consulting.fr", v: "We reply within 24 h" },
+        { k: "contact@btech-consulting.com", v: "We reply within 24 h" },
         { k: "+33 (0) 6 50 31 27 50", v: "Mon–Fri · 9am–7pm CET" },
-        { k: "Global Delivery", v: "European & international clients" },
       ],
     },
     footer: {
@@ -320,7 +319,7 @@ export const translations = {
       sub: "Tell us about your IT challenge. A senior expert will get back to you within 24 business hours — no obligation, no pressure.",
       cards: [
         { k: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont", v: "Btech Consulting Headquarters" },
-        { k: "contact@btech-consulting.fr", v: "We reply within 24 hours" },
+        { k: "contact@btech-consulting.com", v: "We reply within 24 hours" },
         { k: "+33 (0) 6 50 31 27 50", v: "Mon–Fri · 9am–7pm CET" },
       ],
       fullName: "Full name",
@@ -564,9 +563,8 @@ export const translations = {
       secondary: "Voir nos services",
       cards: [
         { k: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont", v: "Siège Btech Consulting" },
-        { k: "contact@btech-consulting.fr", v: "Réponse sous 24 h" },
+        { k: "contact@btech-consulting.com", v: "Réponse sous 24 h" },
         { k: "+33 (0) 6 50 31 27 50", v: "Lun–Ven · 9h–19h CET" },
-        { k: "Livraison mondiale", v: "Clients européens & internationaux" },
       ],
     },
     footer: {
@@ -732,7 +730,7 @@ export const translations = {
       sub: "Parlez-nous de votre défi IT. Un expert senior vous répond sous 24 heures ouvrées — sans engagement, sans pression.",
       cards: [
         { k: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont", v: "Siège Btech Consulting" },
-        { k: "contact@btech-consulting.fr", v: "Réponse sous 24 heures" },
+        { k: "contact@btech-consulting.com", v: "Réponse sous 24 heures" },
         { k: "+33 (0) 6 50 31 27 50", v: "Lun–Ven · 9h–19h CET" },
       ],
       fullName: "Nom complet",
