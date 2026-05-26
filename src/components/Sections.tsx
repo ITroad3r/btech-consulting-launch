@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import parisOffice from "@/assets/paris-office.jpg";
-import logoFooter from "@/assets/btech-logo.jpeg";
+import logoFooter from "@/assets/btech-logo.png";
 
 /* ---------- Section wrapper ---------- */
 function Section({
@@ -516,7 +516,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 md:grid-cols-4">
           <div>
-            <img src={logoFooter} alt="Btech Consulting" className="h-9 w-auto" />
+            <img src={logoFooter} alt="Btech Consulting" className="h-14 w-auto" />
             <p className="mt-5 text-sm text-muted-foreground leading-relaxed max-w-xs">
               Precision IT. Real Results. Paris-based. Globally delivered.
             </p>
