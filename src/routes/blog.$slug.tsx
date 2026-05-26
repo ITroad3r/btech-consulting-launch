@@ -23,7 +23,7 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!p) return { meta: [{ title: "Post not found" }] };
     const title = p.meta_title_en || p.title_en;
     const desc = p.meta_description_en || p.excerpt_en || "";
-    const url = `https://btech-zenith-digital.lovable.app/blog/${params.slug}`;
+    const url = `https://btech-consulting.com/blog/${params.slug}`;
     const img = p.og_image_url || p.cover_image_url;
     const meta: any[] = [
       { title },
