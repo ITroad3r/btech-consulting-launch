@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -23,6 +24,11 @@ import { Route as AdminContentRouteImport } from './routes/admin.content'
 import { Route as AdminBlogRouteImport } from './routes/admin.blog'
 import { Route as AdminBlogIdRouteImport } from './routes/admin.blog.$id'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -97,6 +103,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/blog': typeof AdminBlogRouteWithChildren
   '/admin/content': typeof AdminContentRoute
   '/admin/settings': typeof AdminSettingsRoute
@@ -111,6 +118,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/blog': typeof AdminBlogRouteWithChildren
   '/admin/content': typeof AdminContentRoute
   '/admin/settings': typeof AdminSettingsRoute
@@ -127,6 +135,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/blog': typeof AdminBlogRouteWithChildren
   '/admin/content': typeof AdminContentRoute
   '/admin/settings': typeof AdminSettingsRoute
@@ -144,6 +153,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/login'
     | '/services'
+    | '/sitemap.xml'
     | '/admin/blog'
     | '/admin/content'
     | '/admin/settings'
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/login'
     | '/services'
+    | '/sitemap.xml'
     | '/admin/blog'
     | '/admin/content'
     | '/admin/settings'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/login'
     | '/services'
+    | '/sitemap.xml'
     | '/admin/blog'
     | '/admin/content'
     | '/admin/settings'
@@ -189,10 +201,18 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   LoginRoute: typeof LoginRoute
   ServicesRoute: typeof ServicesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -333,6 +353,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   LoginRoute: LoginRoute,
   ServicesRoute: ServicesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
