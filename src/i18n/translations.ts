@@ -343,9 +343,6 @@ export const translations = {
       submit: "Request a Free Consultation",
       disclaimer: "By submitting this form you agree to be contacted by Btech Consulting about your enquiry. We never share your data.",
     },
-    audit_full: {
-      // services full lists rendered on Services page
-    },
   },
   fr: {
     nav: {
