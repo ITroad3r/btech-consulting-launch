@@ -319,7 +319,7 @@ export const translations = {
       sub: "Tell us about your IT challenge. A senior expert will get back to you within 24 business hours — no obligation, no pressure.",
       cards: [
         { k: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont", v: "Btech Consulting Headquarters" },
-        { k: "contact@btech-consulting.fr", v: "We reply within 24 hours" },
+        { k: "contact@btech-consulting.com", v: "We reply within 24 hours" },
         { k: "+33 (0) 6 50 31 27 50", v: "Mon–Fri · 9am–7pm CET" },
       ],
       fullName: "Full name",
