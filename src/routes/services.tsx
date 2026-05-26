@@ -10,12 +10,18 @@ import { useT } from "@/i18n/LanguageProvider";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "IT Audit, Consulting & Offshoring Services | Btech Consulting Paris" },
-      { name: "description", content: "Explore Btech Consulting's full range of services: IT audit, governance, cybersecurity, digital transformation, ERP advisory, DORA, M&A IT due diligence, and managed IT offshoring from Paris." },
+      { title: "IT Audit, Consulting & Offshoring Services | Btech Consulting" },
+      { name: "description", content: "IT audit, governance, cybersecurity, digital transformation, ERP advisory, DORA, M&A IT due diligence, and managed offshoring from Paris." },
+      { property: "og:title", content: "IT Audit, Consulting & Offshoring Services | Btech Consulting" },
+      { property: "og:description", content: "Full-spectrum IT audit, consulting, and offshoring services delivered from Paris." },
+      { property: "og:url", content: "https://btech-consulting.com/services" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://btech-consulting.com/services" }],
   }),
   component: ServicesPage,
 });
+
 
 const auditIcons = [FileSearch, ShieldCheck, Cloud, Database, Network, Landmark, SearchCheck];
 const offshoreIcons = [Code2, Headphones, TestTube2, BarChart3, ClipboardList, Handshake];
