@@ -40,7 +40,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="relative py-28 md:py-36 px-6 scroll-mt-24">
+    <section id={id} className="relative py-14 md:py-20 px-6 scroll-mt-24">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary">
