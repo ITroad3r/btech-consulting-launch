@@ -61,6 +61,7 @@ function SettingsPage() {
         <section className="glass rounded-xl p-5 space-y-3">
           <h2 className="font-medium">Social links</h2>
           {[
+            ["social_x", "X (Twitter)"],
             ["social_linkedin", "LinkedIn"],
             ["social_instagram", "Instagram"],
             ["social_facebook", "Facebook"],
