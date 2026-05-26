@@ -80,7 +80,9 @@ function BlogPage() {
             <p className="col-span-full text-center text-muted-foreground py-12">No posts published yet.</p>
           )}
         </div>
+        </div>
       </section>
+
 
       <Footer />
     </main>
