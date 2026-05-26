@@ -25,20 +25,17 @@ export function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 px-4 pt-4">
       <nav
-        className={`mx-auto max-w-6xl glass rounded-2xl transition-all duration-500 ${
+        className={`mx-auto max-w-7xl glass rounded-2xl transition-all duration-500 ${
           scrolled ? "shadow-[0_8px_40px_-12px_rgba(20,40,80,0.15)]" : ""
         }`}
       >
-        <div className="flex items-center justify-between px-5 py-3">
-          <Link to="/" className="flex items-center gap-3 group">
+        <div className="flex items-center justify-between px-5 py-2 gap-4">
+          <Link to="/" className="flex items-center gap-3 group shrink-0">
             <img
               src={logo}
               alt="Btech Consulting"
-              className="h-9 w-auto transition-transform group-hover:scale-105"
+              className="h-14 md:h-16 w-auto transition-transform group-hover:scale-105"
             />
-            <div className="hidden sm:block text-[10px] uppercase tracking-[0.25em] text-muted-foreground border-l border-border pl-3">
-              Consulting
-            </div>
           </Link>
 
           <div className="hidden md:flex items-center gap-1">

@@ -40,7 +40,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="relative py-28 md:py-36 px-6 scroll-mt-24">
+    <section id={id} className="relative py-14 md:py-20 px-6 scroll-mt-24">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary">
@@ -421,7 +421,7 @@ export function Testimonials() {
 /* ---------- CTA / Contact ---------- */
 export function Contact() {
   return (
-    <section id="contact-cta" className="relative py-28 md:py-36 px-6 scroll-mt-24">
+    <section id="contact-cta" className="relative py-14 md:py-20 px-6 scroll-mt-24">
       <div className="mx-auto max-w-5xl">
         <div className="relative overflow-hidden rounded-3xl glass-strong p-10 md:p-16">
           <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-primary/25 blur-[120px]" />
