@@ -73,18 +73,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "A professional B2B website for Btech Consulting, an IT Audit, Consulting, and Offshoring firm." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "A professional B2B website for Btech Consulting, an IT Audit, Consulting, and Offshoring firm." },
+      { title: "Btech Consulting | IT Audit, Consulting & Offshoring — Paris" },
+      { name: "description", content: "Btech Consulting — Paris-based IT audit, strategic consulting, and IT offshoring firm serving European and international clients." },
+      { name: "author", content: "Btech Consulting" },
+      { property: "og:site_name", content: "Btech Consulting" },
+      { property: "og:title", content: "Btech Consulting | IT Audit, Consulting & Offshoring — Paris" },
+      { property: "og:description", content: "Paris-based IT audit, strategic consulting, and IT offshoring firm." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "A professional B2B website for Btech Consulting, an IT Audit, Consulting, and Offshoring firm." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2121b84e-aa06-4b13-a4b1-2e71c2a7890b/id-preview-f0590ee6--2b32fadc-b4e4-45a5-8507-26120b3d0862.lovable.app-1779780345622.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2121b84e-aa06-4b13-a4b1-2e71c2a7890b/id-preview-f0590ee6--2b32fadc-b4e4-45a5-8507-26120b3d0862.lovable.app-1779780345622.png" },
+      { property: "og:locale", content: "en_US" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@Btechconsult1" },
+      { name: "twitter:title", content: "Btech Consulting | IT Audit, Consulting & Offshoring — Paris" },
+      { name: "twitter:description", content: "Paris-based IT audit, strategic consulting, and IT offshoring firm." },
     ],
     links: [
       {
@@ -98,6 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
