@@ -687,6 +687,7 @@ export const translations = {
       disclaimer: "En soumettant ce formulaire, vous acceptez d'être contacté par Btech Consulting au sujet de votre demande. Nous ne partageons jamais vos données.",
     },
   },
-} as const;
+};
 
-export type Dict = typeof translations.en;
+export type Dict = (typeof translations)["en"];
+
