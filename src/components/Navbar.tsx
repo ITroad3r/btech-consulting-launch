@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/btech-logo.jpeg";
+import logo from "@/assets/btech-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -34,7 +34,7 @@ export function Navbar() {
             <img
               src={logo}
               alt="Btech Consulting"
-              className="h-14 md:h-16 w-auto transition-transform group-hover:scale-105"
+              className="h-16 md:h-20 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
 
