@@ -55,7 +55,10 @@ function BlogPage() {
       </section>
 
       <section className="py-16 px-6">
-        <div className="mx-auto max-w-6xl grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mx-auto max-w-6xl">
+        <h2 className="sr-only">Latest Articles</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
           {(posts ?? []).map((p) => {
             const title = (lang === "fr" ? p.title_fr : p.title_en) || p.title_en;
             const excerpt = (lang === "fr" ? p.excerpt_fr : p.excerpt_en) || "";
