@@ -53,7 +53,23 @@ function ContactPage() {
             </div>
           </div>
 
-          <form className="glass-strong rounded-3xl p-8 md:p-10 space-y-5" onSubmit={(e) => e.preventDefault()}>
+          <form
+            className="glass-strong rounded-3xl p-8 md:p-10 space-y-5"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const f = e.currentTarget as HTMLFormElement;
+              const name = (f.elements.namedItem("name") as HTMLInputElement)?.value || "";
+              const company = (f.elements.namedItem("company") as HTMLInputElement)?.value || "";
+              const email = (f.elements.namedItem("email") as HTMLInputElement)?.value || "";
+              const service = (f.elements.namedItem("service") as HTMLSelectElement)?.value || "";
+              const message = (f.elements.namedItem("message") as HTMLTextAreaElement)?.value || "";
+              const subject = encodeURIComponent(`Contact request — ${service || "General"} — ${name}`);
+              const body = encodeURIComponent(
+                `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`
+              );
+              window.location.href = `mailto:contact@btech-consulting.com?subject=${subject}&body=${body}`;
+            }}
+          >
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.fullName}</label>
