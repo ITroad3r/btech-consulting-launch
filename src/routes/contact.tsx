@@ -9,10 +9,42 @@ export const Route = createFileRoute("/contact")({
     meta: [
       { title: "Contact Btech Consulting | IT Audit & Offshoring — Paris" },
       { name: "description", content: "Get in touch with Btech Consulting in Paris. Request a free consultation for IT audit, consulting, or offshoring services." },
+      { property: "og:title", content: "Contact Btech Consulting | IT Audit & Offshoring — Paris" },
+      { property: "og:description", content: "Request a free consultation for IT audit, consulting, or offshoring services." },
+      { property: "og:url", content: "https://btech-consulting.com/contact" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://btech-consulting.com/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Btech Consulting",
+          url: "https://btech-consulting.com/contact",
+          email: "contact@btech-consulting.com",
+          telephone: "+33 6 50 31 27 50",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "8 T Place Henri d'Astier",
+            addressLocality: "Charenton-le-Pont",
+            postalCode: "94220",
+            addressCountry: "FR",
+          },
+          openingHoursSpecification: [{
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "19:00",
+          }],
+        }),
+      },
     ],
   }),
   component: ContactPage,
 });
+
 
 const icons = [MapPin, Mail, Phone];
 
