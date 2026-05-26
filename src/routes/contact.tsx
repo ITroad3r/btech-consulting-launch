@@ -9,10 +9,42 @@ export const Route = createFileRoute("/contact")({
     meta: [
       { title: "Contact Btech Consulting | IT Audit & Offshoring — Paris" },
       { name: "description", content: "Get in touch with Btech Consulting in Paris. Request a free consultation for IT audit, consulting, or offshoring services." },
+      { property: "og:title", content: "Contact Btech Consulting | IT Audit & Offshoring — Paris" },
+      { property: "og:description", content: "Request a free consultation for IT audit, consulting, or offshoring services." },
+      { property: "og:url", content: "https://btech-consulting.com/contact" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://btech-consulting.com/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Btech Consulting",
+          url: "https://btech-consulting.com/contact",
+          email: "contact@btech-consulting.com",
+          telephone: "+33 6 50 31 27 50",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "8 T Place Henri d'Astier",
+            addressLocality: "Charenton-le-Pont",
+            postalCode: "94220",
+            addressCountry: "FR",
+          },
+          openingHoursSpecification: [{
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "19:00",
+          }],
+        }),
+      },
     ],
   }),
   component: ContactPage,
 });
+
 
 const icons = [MapPin, Mail, Phone];
 
@@ -72,30 +104,31 @@ function ContactPage() {
           >
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.fullName}</label>
-                <input name="name" type="text" required className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.fullNamePh} />
+                <label htmlFor="contact-name" className="text-xs uppercase tracking-wider text-muted-foreground">{cp.fullName}</label>
+                <input id="contact-name" name="name" type="text" required className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.fullNamePh} />
               </div>
               <div>
-                <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.company}</label>
-                <input name="company" type="text" className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.companyPh} />
+                <label htmlFor="contact-company" className="text-xs uppercase tracking-wider text-muted-foreground">{cp.company}</label>
+                <input id="contact-company" name="company" type="text" className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.companyPh} />
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.email}</label>
-                <input name="email" type="email" required className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.emailPh} />
+                <label htmlFor="contact-email" className="text-xs uppercase tracking-wider text-muted-foreground">{cp.email}</label>
+                <input id="contact-email" name="email" type="email" required className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder={cp.emailPh} />
               </div>
               <div>
-                <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.service}</label>
-                <select name="service" className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors">
+                <label htmlFor="contact-service" className="text-xs uppercase tracking-wider text-muted-foreground">{cp.service}</label>
+                <select id="contact-service" name="service" className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors">
                   {cp.services.map((s) => <option key={s}>{s}</option>)}
                 </select>
               </div>
             </div>
             <div>
-              <label className="text-xs uppercase tracking-wider text-muted-foreground">{cp.message}</label>
-              <textarea name="message" rows={5} className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors resize-none" placeholder={cp.messagePh} />
+              <label htmlFor="contact-message" className="text-xs uppercase tracking-wider text-muted-foreground">{cp.message}</label>
+              <textarea id="contact-message" name="message" rows={5} className="mt-2 w-full bg-background/60 border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors resize-none" placeholder={cp.messagePh} />
             </div>
+
             <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm hover:scale-[1.01] active:scale-[0.99] transition-transform glow-primary">
               {cp.submit}
               <Send size={16} />

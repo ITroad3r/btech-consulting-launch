@@ -1,0 +1,13 @@
+# Btech Consulting
+
+> Paris-based IT audit, strategic consulting, and IT offshoring firm serving European and international clients.
+
+Btech Consulting helps organisations strengthen IT governance, secure their infrastructure, modernise their systems, and scale delivery capacity through managed offshoring.
+
+## Pages
+
+- [Home](/): Overview of Btech Consulting's IT audit, consulting, and offshoring expertise.
+- [About](/about): Company story, mission, values, and team credentials.
+- [Services](/services): IT audit, governance, cybersecurity, digital transformation, ERP advisory, DORA, M&A IT due diligence, and managed offshoring.
+- [Blog](/blog): Expert articles on IT audit, cybersecurity, transformation, and offshoring.
+- [Contact](/contact): Paris office address, phone, email, and inquiry form.
