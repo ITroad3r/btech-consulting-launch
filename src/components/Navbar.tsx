@@ -2,18 +2,21 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/btech-logo.png";
-
-const links = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact" },
-] as const;
+import { useT } from "@/i18n/LanguageProvider";
+import { LanguageToggle } from "./LanguageToggle";
 
 export function Navbar() {
+  const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const links = [
+    { to: "/", label: t.nav.home },
+    { to: "/about", label: t.nav.about },
+    { to: "/services", label: t.nav.services },
+    { to: "/blog", label: t.nav.blog },
+    { to: "/contact", label: t.nav.contact },
+  ] as const;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -53,22 +56,26 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageToggle />
             <Link
               to="/contact"
               className="relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:scale-[1.03] active:scale-[0.98] transition-transform glow-primary"
             >
-              Book a Consultation
+              {t.nav.cta}
             </Link>
           </div>
 
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="md:hidden p-2 rounded-lg hover:bg-primary/5 text-foreground"
-            aria-label="Menu"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <LanguageToggle />
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="p-2 rounded-lg hover:bg-primary/5 text-foreground"
+              aria-label="Menu"
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
         {open && (
@@ -88,7 +95,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className="mt-2 px-3 py-2.5 text-sm text-center rounded-lg bg-primary text-primary-foreground"
             >
-              Book a Consultation
+              {t.nav.cta}
             </Link>
           </div>
         )}
