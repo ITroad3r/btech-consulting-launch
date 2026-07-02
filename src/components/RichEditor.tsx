@@ -143,6 +143,20 @@ export function RichEditor({
           const f = e.target.files?.[0]; if (f) uploadImage(f);
           e.target.value = "";
         }} />
+        <ToolbarBtn title="YouTube video" onClick={() => {
+          const url = prompt("YouTube URL");
+          if (url) editor.chain().focus().setYoutubeVideo({ src: url }).run();
+        }}><YoutubeIcon size={16} /></ToolbarBtn>
+        <ToolbarBtn title="Insert table" onClick={() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}><TableIcon size={16} /></ToolbarBtn>
+        {editor.isActive("table") && (
+          <>
+            <ToolbarBtn title="Add column" onClick={() => editor.chain().focus().addColumnAfter().run()}>+col</ToolbarBtn>
+            <ToolbarBtn title="Add row" onClick={() => editor.chain().focus().addRowAfter().run()}>+row</ToolbarBtn>
+            <ToolbarBtn title="Delete column" onClick={() => editor.chain().focus().deleteColumn().run()}>-col</ToolbarBtn>
+            <ToolbarBtn title="Delete row" onClick={() => editor.chain().focus().deleteRow().run()}>-row</ToolbarBtn>
+            <ToolbarBtn title="Delete table" onClick={() => editor.chain().focus().deleteTable().run()}>×tbl</ToolbarBtn>
+          </>
+        )}
         <div className="ml-auto flex gap-1">
           <ToolbarBtn title="Undo" onClick={() => editor.chain().focus().undo().run()}><Undo size={16} /></ToolbarBtn>
           <ToolbarBtn title="Redo" onClick={() => editor.chain().focus().redo().run()}><Redo size={16} /></ToolbarBtn>
