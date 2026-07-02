@@ -41,19 +41,20 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="relative py-14 md:py-20 px-6 scroll-mt-24">
+    <section id={id} className="relative py-12 md:py-20 px-4 sm:px-6 scroll-mt-24">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary">
             <span className="h-px w-8 bg-primary/60" />
             {eyebrow}
           </div>
-          <h2 className="mt-5 font-display text-3xl md:text-5xl leading-tight">{title}</h2>
+          <h2 className="mt-5 font-display text-2xl sm:text-3xl md:text-5xl leading-tight break-words">{title}</h2>
           {intro && (
             <p className="mt-5 text-muted-foreground text-base md:text-lg leading-relaxed">{intro}</p>
           )}
         </div>
-        <div className="mt-14">{children}</div>
+        <div className="mt-10 md:mt-14">{children}</div>
+
       </div>
     </section>
   );
