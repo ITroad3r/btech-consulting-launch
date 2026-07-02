@@ -191,9 +191,9 @@ export const translations = {
       primary: "Request a Free Consultation",
       secondary: "View Our Services",
       cards: [
-        { k: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont", v: "Btech Consulting HQ" },
-        { k: "contact@btech-consulting.com", v: "We reply within 24 h" },
-        { k: "+33 (0) 6 50 31 27 50", v: "Mon–Fri · 9am–7pm CET" },
+        { k: "Paris office", v: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont" },
+        { k: "Email", v: "contact@btech-consulting.com" },
+        { k: "Phone", v: "+33 (0) 6 50 31 27 50" },
       ],
     },
     footer: {
@@ -642,9 +642,9 @@ export const translations = {
       primary: "Demander une consultation gratuite",
       secondary: "Voir nos services",
       cards: [
-        { k: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont", v: "Siège Btech Consulting" },
-        { k: "contact@btech-consulting.com", v: "Réponse sous 24 h" },
-        { k: "+33 (0) 6 50 31 27 50", v: "Lun–Ven · 9h–19h CET" },
+        { k: "Bureau de Paris", v: "8 T Place Henri d'Astier, 94220 Charenton-le-Pont" },
+        { k: "Email", v: "contact@btech-consulting.com" },
+        { k: "Téléphone", v: "+33 (0) 6 50 31 27 50" },
       ],
     },
     footer: {
