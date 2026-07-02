@@ -304,6 +304,52 @@ export function Testimonials() {
   );
 }
 
+export function Faq() {
+  const t = useT();
+  return (
+    <Section
+      id="faq"
+      eyebrow={t.faq.eyebrow}
+      title={
+        <>
+          {t.faq.titleA}
+          <span className="text-gradient">{t.faq.titleHL}</span>
+        </>
+      }
+      intro={t.faq.intro}
+    >
+      <div className="grid md:grid-cols-2 gap-4" itemScope itemType="https://schema.org/FAQPage">
+        {t.faq.items.map((item, i) => (
+          <details
+            key={i}
+            className="glass rounded-2xl p-6 group open:border-primary/40 transition-colors"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
+          >
+            <summary className="cursor-pointer list-none flex items-start justify-between gap-4">
+              <h3 className="text-base md:text-lg font-semibold text-foreground" itemProp="name">
+                {item.q}
+              </h3>
+              <span className="text-primary text-xl leading-none transition-transform group-open:rotate-45 shrink-0">
+                +
+              </span>
+            </summary>
+            <div
+              className="mt-4 text-sm md:text-base text-muted-foreground leading-relaxed"
+              itemScope
+              itemProp="acceptedAnswer"
+              itemType="https://schema.org/Answer"
+            >
+              <p itemProp="text">{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
 const ctaIcons = [MapPin, Mail, Phone, Globe2];
 
 export function Contact() {
