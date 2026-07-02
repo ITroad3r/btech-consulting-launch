@@ -26,9 +26,10 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 px-4 pt-4">
+    <header className="fixed top-0 inset-x-0 z-50 px-3 sm:px-4 pt-3 sm:pt-4">
       <nav
-        className={`mx-auto max-w-7xl glass rounded-2xl transition-all duration-500 ${
+        className={`mx-auto max-w-7xl rounded-2xl transition-all duration-500 bg-background/90 backdrop-blur-xl border border-border ${
+
           scrolled ? "shadow-[0_8px_40px_-12px_rgba(20,40,80,0.15)]" : ""
         }`}
       >
