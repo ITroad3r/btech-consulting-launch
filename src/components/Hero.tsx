@@ -6,7 +6,7 @@ import { useT } from "@/i18n/LanguageProvider";
 export function Hero() {
   const t = useT();
   return (
-    <section className="relative pt-40 pb-28 md:pt-52 md:pb-40 overflow-hidden">
+    <section className="relative pt-28 sm:pt-36 md:pt-52 pb-20 md:pb-40 overflow-hidden">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
