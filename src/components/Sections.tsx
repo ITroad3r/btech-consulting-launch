@@ -308,24 +308,25 @@ const ctaIcons = [MapPin, Mail, Phone, Globe2];
 export function Contact() {
   const t = useT();
   return (
-    <section id="contact-cta" className="relative py-14 md:py-20 px-6 scroll-mt-24">
+    <section id="contact-cta" className="relative py-14 md:py-20 px-4 sm:px-6 scroll-mt-24">
       <div className="mx-auto max-w-5xl">
-        <div className="relative overflow-hidden rounded-3xl glass-strong p-10 md:p-16">
+        <div className="relative overflow-hidden rounded-3xl glass-strong p-6 sm:p-10 md:p-16">
           <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-primary/25 blur-[120px]" />
           <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-mint/15 blur-[120px]" />
 
-          <div className="relative grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="min-w-0">
               <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary">
                 <span className="h-px w-8 bg-primary/60" />
                 {t.contactCta.eyebrow}
               </div>
-              <h2 className="mt-5 font-display text-3xl md:text-5xl leading-tight">
+              <h2 className="mt-5 font-display text-2xl sm:text-3xl md:text-5xl leading-tight break-words">
                 {t.contactCta.titleA}
                 <span className="text-gradient">{t.contactCta.titleHL}</span>
                 {t.contactCta.titleB}
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">{t.contactCta.desc}</p>
+
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link
