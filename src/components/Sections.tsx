@@ -354,10 +354,18 @@ const ctaIcons = [MapPin, Mail, Phone, Globe2];
 
 export function Contact() {
   const t = useT();
+  const { data: settings } = useSettings();
+  const cards = t.contactCta.cards.map((c, i) => {
+    if (i === 0 && settings?.contact_address) return { ...c, v: settings.contact_address };
+    if (i === 1 && settings?.contact_email) return { ...c, v: settings.contact_email };
+    if (i === 2 && settings?.contact_phone) return { ...c, v: settings.contact_phone };
+    return c;
+  });
+
   return (
-    <section id="contact-cta" className="relative py-14 md:py-20 px-4 sm:px-6 scroll-mt-24">
-      <div className="mx-auto max-w-5xl">
-        <div className="relative overflow-hidden rounded-3xl glass-strong p-6 sm:p-10 md:p-16">
+    <section id="contact-cta" className="relative overflow-x-hidden py-10 px-3 scroll-mt-24 sm:px-6 md:py-20">
+      <div className="mx-auto w-full max-w-5xl">
+        <div className="relative w-full max-w-full overflow-hidden rounded-2xl glass-strong p-4 sm:rounded-3xl sm:p-10 md:p-16">
           <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-primary/25 blur-[120px]" />
           <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-mint/15 blur-[120px]" />
 
@@ -367,57 +375,46 @@ export function Contact() {
                 <span className="h-px w-8 bg-primary/60" />
                 {t.contactCta.eyebrow}
               </div>
-              <h2 className="mt-5 font-display text-2xl sm:text-3xl md:text-5xl leading-tight break-words">
+              <h2 className="mt-5 font-display text-2xl leading-tight break-words sm:text-3xl md:text-5xl">
                 {t.contactCta.titleA}
                 <span className="text-gradient">{t.contactCta.titleHL}</span>
                 {t.contactCta.titleB}
               </h2>
-              <p className="mt-5 text-muted-foreground leading-relaxed">{t.contactCta.desc}</p>
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground break-words sm:text-base">{t.contactCta.desc}</p>
 
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <div className="mt-8 grid gap-3 sm:flex sm:flex-row">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm hover:scale-[1.03] active:scale-[0.98] transition-transform glow-primary"
+                  className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3.5 text-center text-sm font-medium leading-snug text-primary-foreground glow-primary transition-transform hover:scale-[1.03] active:scale-[0.98] sm:w-auto sm:px-6"
                 >
-                  {t.contactCta.primary}
-                  <ArrowRight size={16} />
+                  <span className="min-w-0 break-words">{t.contactCta.primary}</span>
+                  <ArrowRight size={16} className="shrink-0" />
                 </Link>
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl glass text-foreground font-medium text-sm hover:bg-primary/5 transition-colors"
+                  className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-xl glass px-4 py-3.5 text-center text-sm font-medium leading-snug text-foreground transition-colors hover:bg-primary/5 sm:w-auto sm:px-6"
                 >
-                  {t.contactCta.secondary}
+                  <span className="min-w-0 break-words">{t.contactCta.secondary}</span>
                 </Link>
               </div>
             </div>
 
-            <div className="grid gap-3">
-              {(() => {
-                // Inject dynamic settings into the contact cards
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                const { data: settings } = useSettings();
-                const cards = t.contactCta.cards.map((c, i) => {
-                  if (i === 0 && settings?.contact_address) return { ...c, v: settings.contact_address };
-                  if (i === 1 && settings?.contact_email) return { ...c, v: settings.contact_email };
-                  if (i === 2 && settings?.contact_phone) return { ...c, v: settings.contact_phone };
-                  return c;
-                });
-                return cards.map((c, i) => {
-                  const Icon = ctaIcons[i] ?? MapPin;
-                  return (
-                    <div key={c.k} className="glass rounded-xl p-4 flex items-center gap-4">
-                      <div className="h-10 w-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                        <Icon size={16} />
-                      </div>
-                      <div className="min-w-0">
-                        <div className="text-sm text-foreground font-medium truncate">{c.k}</div>
-                        <div className="text-xs text-muted-foreground truncate">{c.v}</div>
-                      </div>
+            <div className="grid min-w-0 gap-3">
+              {cards.map((c, i) => {
+                const Icon = ctaIcons[i] ?? MapPin;
+                return (
+                  <div key={`${c.k}-${i}`} className="glass flex min-w-0 items-start gap-3 rounded-xl p-3.5 sm:items-center sm:gap-4 sm:p-4">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary sm:h-10 sm:w-10">
+                      <Icon size={16} />
                     </div>
-                  );
-                });
-              })()}
+                    <div className="min-w-0 flex-1 overflow-hidden">
+                      <div className="text-sm font-medium leading-snug text-foreground break-words">{c.k}</div>
+                      <div className="mt-1 text-xs leading-snug text-muted-foreground break-words">{c.v}</div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
