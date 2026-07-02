@@ -593,6 +593,46 @@ export const translations = {
         },
       ],
     },
+    faq: {
+      eyebrow: "Questions Fréquentes",
+      titleA: "Réponses sur ",
+      titleHL: "Btech Consulting.",
+      intro: "Des réponses claires et directes sur nos services d'audit IT, de conseil et d'offshoring — pour les décideurs européens et internationaux.",
+      items: [
+        {
+          q: "Que fait Btech Consulting ?",
+          a: "Btech Consulting est un cabinet de conseil IT basé à Paris, spécialisé dans trois domaines : l'audit IT et la gouvernance (dont DORA, NIS2, ISO 27001 et due diligence IT en M&A), le conseil IT stratégique (transformation digitale, stratégie cloud, conseil ERP), et l'offshoring et nearshoring IT managés (équipes d'ingénierie dédiées, TMA et support 24/7)."
+        },
+        {
+          q: "Où se trouve Btech Consulting ?",
+          a: "Le siège de Btech Consulting est situé au 8 T Place Henri d'Astier, 94220 Charenton-le-Pont, en région parisienne, France. Nous accompagnons des clients dans toute l'Europe et à l'international, avec des centres de delivery distribués pour les missions d'offshoring."
+        },
+        {
+          q: "Comment contacter Btech Consulting ?",
+          a: "Vous pouvez joindre Btech Consulting par email à contact@btech-consulting.com, par téléphone au +33 (0) 6 50 31 27 50 (du lundi au vendredi, 9h–19h CET), ou via le formulaire de contact sur btech-consulting.com/contact. Nous répondons à toutes les demandes sérieuses sous 24 heures ouvrées."
+        },
+        {
+          q: "Quels secteurs Btech Consulting couvre-t-il ?",
+          a: "Nous accompagnons les services financiers et la banque, la santé, le retail et l'e-commerce, l'industrie et Industrie 4.0, le secteur public, les télécoms et les médias, ainsi que l'éducation. Nos pratiques d'audit IT et d'offshoring sont sectoriellement agnostiques mais forgées par l'expérience des industries réglementées (DORA, HDS, PCI-DSS, RGPD)."
+        },
+        {
+          q: "Btech Consulting est-il une alternative aux Big Four pour l'audit IT ?",
+          a: "Oui. Btech Consulting offre la même rigueur méthodologique que les cabinets Big Four, avec des délais plus courts, un staffing 100% senior sur chaque mission, et des tarifs généralement 30 à 50% inférieurs. Nos clients citent la réactivité, des recommandations pratiques et priorisées, et le support post-audit comme différences clés."
+        },
+        {
+          q: "Qu'est-ce que l'offshoring IT et comment Btech le délivre-t-il ?",
+          a: "L'offshoring IT consiste à opérer une partie de votre delivery IT depuis un site distant sous un modèle de service managé. Btech Consulting fournit des équipes d'ingénierie dédiées (développeurs, DevOps, QA, data engineers) qui fonctionnent comme une extension de votre organisation, avec des leads francophones ou anglophones, des horaires alignés CET, et une protection complète de la PI sous le droit français et européen."
+        },
+        {
+          q: "Btech Consulting accompagne-t-il la conformité DORA et NIS2 ?",
+          a: "Oui. Nous aidons les entités financières européennes et les opérateurs d'infrastructures critiques à atteindre la conformité DORA (Digital Operational Resilience Act) et NIS2 grâce à des évaluations d'écarts, des cadres de gestion des risques ICT, des registres de risques tiers, des workflows de reporting d'incidents et des programmes de tests de résilience."
+        },
+        {
+          q: "Sous quel délai Btech Consulting peut-il démarrer une mission ?",
+          a: "Pour les audits IT, nous démarrons généralement sous 1 à 2 semaines après signature du contrat. Pour l'offshoring, nous proposons une shortlist d'ingénieurs sous 5 jours ouvrés et onboardons une équipe complète en 4 à 6 semaines selon les profils."
+        }
+      ]
+    },
     contactCta: {
       eyebrow: "Contactez-nous",
       titleA: "Prêt à ",
