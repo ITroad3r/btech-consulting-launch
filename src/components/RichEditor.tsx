@@ -9,12 +9,18 @@ import { TextStyle } from "@tiptap/extension-text-style";
 import { FontFamily } from "@tiptap/extension-font-family";
 import { Highlight } from "@tiptap/extension-highlight";
 import { Placeholder } from "@tiptap/extension-placeholder";
+import { Table } from "@tiptap/extension-table";
+import { TableRow } from "@tiptap/extension-table-row";
+import { TableCell } from "@tiptap/extension-table-cell";
+import { TableHeader } from "@tiptap/extension-table-header";
+import { Youtube } from "@tiptap/extension-youtube";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import {
   Bold, Italic, Underline as UIcon, Strikethrough, Heading1, Heading2, Heading3,
   List, ListOrdered, Quote, Code, Link as LinkIcon, Image as ImgIcon,
   AlignLeft, AlignCenter, AlignRight, Undo, Redo, Highlighter,
+  Table as TableIcon, Youtube as YoutubeIcon,
 } from "lucide-react";
 import { useRef } from "react";
 
@@ -51,6 +57,11 @@ export function RichEditor({
       Image,
       TextAlign.configure({ types: ["heading", "paragraph"] }),
       Placeholder.configure({ placeholder: placeholder ?? "Write your content..." }),
+      Table.configure({ resizable: true, HTMLAttributes: { class: "border-collapse w-full my-3" } }),
+      TableRow,
+      TableHeader,
+      TableCell,
+      Youtube.configure({ controls: true, nocookie: true, HTMLAttributes: { class: "rounded my-3 w-full aspect-video" } }),
     ],
     content: value || "",
     immediatelyRender: false,
@@ -58,7 +69,7 @@ export function RichEditor({
     editorProps: {
       attributes: {
         class:
-          "prose prose-invert max-w-none min-h-[300px] p-4 focus:outline-none [&_h1]:text-3xl [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-primary",
+          "prose prose-invert max-w-none min-h-[300px] p-4 focus:outline-none [&_h1]:text-3xl [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-primary [&_table]:border [&_th]:border [&_th]:p-2 [&_th]:bg-muted [&_td]:border [&_td]:p-2",
       },
     },
   });
@@ -132,6 +143,20 @@ export function RichEditor({
           const f = e.target.files?.[0]; if (f) uploadImage(f);
           e.target.value = "";
         }} />
+        <ToolbarBtn title="YouTube video" onClick={() => {
+          const url = prompt("YouTube URL");
+          if (url) editor.chain().focus().setYoutubeVideo({ src: url }).run();
+        }}><YoutubeIcon size={16} /></ToolbarBtn>
+        <ToolbarBtn title="Insert table" onClick={() => editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}><TableIcon size={16} /></ToolbarBtn>
+        {editor.isActive("table") && (
+          <>
+            <ToolbarBtn title="Add column" onClick={() => editor.chain().focus().addColumnAfter().run()}>+col</ToolbarBtn>
+            <ToolbarBtn title="Add row" onClick={() => editor.chain().focus().addRowAfter().run()}>+row</ToolbarBtn>
+            <ToolbarBtn title="Delete column" onClick={() => editor.chain().focus().deleteColumn().run()}>-col</ToolbarBtn>
+            <ToolbarBtn title="Delete row" onClick={() => editor.chain().focus().deleteRow().run()}>-row</ToolbarBtn>
+            <ToolbarBtn title="Delete table" onClick={() => editor.chain().focus().deleteTable().run()}>×tbl</ToolbarBtn>
+          </>
+        )}
         <div className="ml-auto flex gap-1">
           <ToolbarBtn title="Undo" onClick={() => editor.chain().focus().undo().run()}><Undo size={16} /></ToolbarBtn>
           <ToolbarBtn title="Redo" onClick={() => editor.chain().focus().redo().run()}><Redo size={16} /></ToolbarBtn>
