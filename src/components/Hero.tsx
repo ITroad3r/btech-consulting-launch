@@ -6,7 +6,7 @@ import { useT } from "@/i18n/LanguageProvider";
 export function Hero() {
   const t = useT();
   return (
-    <section className="relative pt-40 pb-28 md:pt-52 md:pb-40 overflow-hidden">
+    <section className="relative pt-28 sm:pt-36 md:pt-52 pb-20 md:pb-40 overflow-hidden">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
@@ -23,7 +23,7 @@ export function Hero() {
       <div className="absolute top-1/3 -left-20 h-72 w-72 rounded-full bg-primary/20 blur-[120px] animate-pulse-soft pointer-events-none" />
       <div className="absolute bottom-10 right-0 h-72 w-72 rounded-full bg-mint/15 blur-[120px] animate-pulse-soft pointer-events-none" />
 
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 glass rounded-full pl-2 pr-4 py-1.5 text-xs text-muted-foreground animate-fade-up">
             <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary">
@@ -34,7 +34,7 @@ export function Hero() {
           </div>
 
           <h1
-            className="mt-7 font-display font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl animate-fade-up"
+            className="mt-7 font-display font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl animate-fade-up break-words"
             style={{ animationDelay: "80ms" }}
           >
             {t.hero.title1}{" "}

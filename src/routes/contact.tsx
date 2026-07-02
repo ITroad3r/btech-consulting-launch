@@ -55,7 +55,7 @@ function ContactPage() {
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
 
-      <section className="pt-40 pb-20 px-6">
+      <section className="pt-28 sm:pt-36 md:pt-40 pb-16 md:pb-20 px-4 sm:px-6">
         <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-12">
           <div>
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary">

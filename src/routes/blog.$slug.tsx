@@ -75,7 +75,7 @@ function PostPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <article className="pt-40 pb-20 px-6">
+      <article className="pt-28 sm:pt-36 md:pt-40 pb-16 md:pb-20 px-4 sm:px-6">
         <div className="mx-auto max-w-3xl">
           <Link to="/blog" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary">
             <ArrowLeft size={14} /> All posts

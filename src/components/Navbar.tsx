@@ -26,20 +26,22 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 px-4 pt-4">
+    <header className="fixed top-0 inset-x-0 z-50 px-3 sm:px-4 pt-3 sm:pt-4">
       <nav
-        className={`mx-auto max-w-7xl glass rounded-2xl transition-all duration-500 ${
+        className={`mx-auto max-w-7xl rounded-2xl transition-all duration-500 bg-background/90 backdrop-blur-xl border border-border ${
+
           scrolled ? "shadow-[0_8px_40px_-12px_rgba(20,40,80,0.15)]" : ""
         }`}
       >
-        <div className="flex items-center justify-between px-5 py-2 gap-4">
-          <Link to="/" className="flex items-center gap-3 group shrink-0">
+        <div className="flex items-center justify-between px-3 sm:px-5 py-2 gap-2 sm:gap-4">
+          <Link to="/" className="flex items-center gap-3 group shrink-0 min-w-0">
             <img
               src={logo}
               alt="Btech Consulting"
-              className="h-16 md:h-20 w-auto transition-transform group-hover:scale-105"
+              className="h-10 sm:h-14 md:h-20 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
+
 
           <div className="hidden md:flex items-center gap-1">
             {links.map((l) => (
