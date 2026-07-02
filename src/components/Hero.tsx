@@ -34,7 +34,7 @@ export function Hero() {
           </div>
 
           <h1
-            className="mt-7 font-display font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl animate-fade-up"
+            className="mt-7 font-display font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl animate-fade-up break-words"
             style={{ animationDelay: "80ms" }}
           >
             {t.hero.title1}{" "}
