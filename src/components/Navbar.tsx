@@ -33,14 +33,15 @@ export function Navbar() {
           scrolled ? "shadow-[0_8px_40px_-12px_rgba(20,40,80,0.15)]" : ""
         }`}
       >
-        <div className="flex items-center justify-between px-5 py-2 gap-4">
-          <Link to="/" className="flex items-center gap-3 group shrink-0">
+        <div className="flex items-center justify-between px-3 sm:px-5 py-2 gap-2 sm:gap-4">
+          <Link to="/" className="flex items-center gap-3 group shrink-0 min-w-0">
             <img
               src={logo}
               alt="Btech Consulting"
-              className="h-16 md:h-20 w-auto transition-transform group-hover:scale-105"
+              className="h-10 sm:h-14 md:h-20 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
+
 
           <div className="hidden md:flex items-center gap-1">
             {links.map((l) => (
