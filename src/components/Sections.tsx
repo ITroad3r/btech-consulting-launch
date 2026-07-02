@@ -366,8 +366,8 @@ export function Contact() {
     <section id="contact-cta" className="relative overflow-x-hidden py-10 px-3 scroll-mt-24 sm:px-6 md:py-20">
       <div className="mx-auto w-full max-w-5xl">
         <div className="relative w-full max-w-full overflow-hidden rounded-2xl glass-strong p-4 sm:rounded-3xl sm:p-10 md:p-16">
-          <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-primary/25 blur-[120px]" />
-          <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-mint/15 blur-[120px]" />
+          <div className="absolute -top-32 -right-32 hidden h-80 w-80 rounded-full bg-primary/25 blur-[120px] sm:block" />
+          <div className="absolute -bottom-32 -left-32 hidden h-80 w-80 rounded-full bg-mint/15 blur-[120px] sm:block" />
 
           <div className="relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="min-w-0">
