@@ -1,13 +1,46 @@
 # Btech Consulting
 
-> Paris-based IT audit, strategic consulting, and IT offshoring firm serving European and international clients.
+> Btech Consulting is a Paris-based IT audit, strategic consulting, and IT offshoring firm serving European and international clients. Headquarters: 8 T Place Henri d'Astier, 94220 Charenton-le-Pont, France. Contact: contact@btech-consulting.com, +33 (0) 6 50 31 27 50.
 
-Btech Consulting helps organisations strengthen IT governance, secure their infrastructure, modernise their systems, and scale delivery capacity through managed offshoring.
+Btech Consulting helps organisations strengthen IT governance, secure their infrastructure, achieve regulatory compliance (DORA, NIS2, ISO 27001, GDPR), modernise their systems, and scale delivery capacity through managed offshoring and nearshoring. The firm positions itself as a senior-only, faster-turnaround alternative to Big Four IT audit practices, with pricing typically 30–50% lower.
+
+## Core services
+
+- IT audit and governance (operational, security, compliance)
+- Cybersecurity assessment and remediation
+- DORA and NIS2 regulatory compliance
+- ISO 27001 preparation and audit support
+- Cloud strategy and migration (AWS, Azure, GCP)
+- Digital transformation and IT roadmaps
+- ERP advisory (SAP, Oracle, Microsoft Dynamics)
+- M&A IT due diligence
+- Managed IT offshoring and nearshoring
+- Dedicated engineering teams (developers, DevOps, QA, data)
+- Application maintenance and 24/7 support
+
+## Industries served
+
+Financial services and banking, healthcare, retail and e-commerce, manufacturing and Industry 4.0, public sector, telecoms and media, education.
 
 ## Pages
 
-- [Home](/): Overview of Btech Consulting's IT audit, consulting, and offshoring expertise.
-- [About](/about): Company story, mission, values, and team credentials.
-- [Services](/services): IT audit, governance, cybersecurity, digital transformation, ERP advisory, DORA, M&A IT due diligence, and managed offshoring.
-- [Blog](/blog): Expert articles on IT audit, cybersecurity, transformation, and offshoring.
-- [Contact](/contact): Paris office address, phone, email, and inquiry form.
+- [Home](https://btech-consulting.com/): Company overview, services, industries, testimonials and FAQ.
+- [About](https://btech-consulting.com/about): Story, mission, values, methodology and team credentials.
+- [Services](https://btech-consulting.com/services): Full catalogue of IT audit, consulting and offshoring services with the five-phase delivery methodology.
+- [Blog](https://btech-consulting.com/blog): Expert articles on IT audit, DORA, NIS2, cybersecurity, transformation and offshoring.
+- [Contact](https://btech-consulting.com/contact): Paris office address, phone, email and inquiry form.
+
+## Featured articles
+
+- [IT Audit in 2026: A Complete Guide for European Businesses](https://btech-consulting.com/blog/it-audit-2026-complete-guide-european-businesses): DORA, NIS2 and ISO 27001 explained for European decision-makers.
+- [IT Offshoring & Nearshoring: Why French Companies Are Choosing Distributed Delivery](https://btech-consulting.com/blog/it-offshoring-nearshoring-french-companies): Delivery models, cost benchmarks and governance for French buyers.
+
+## Languages
+
+Site available in English and French. Default: English.
+
+## Optional
+
+- [llms-full.txt](https://btech-consulting.com/llms-full.txt): Extended company profile, service details and structured Q&A for AI assistants.
+- [Sitemap](https://btech-consulting.com/sitemap.xml)
+- [Robots.txt](https://btech-consulting.com/robots.txt)
