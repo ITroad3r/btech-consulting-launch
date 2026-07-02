@@ -57,6 +57,11 @@ export function RichEditor({
       Image,
       TextAlign.configure({ types: ["heading", "paragraph"] }),
       Placeholder.configure({ placeholder: placeholder ?? "Write your content..." }),
+      Table.configure({ resizable: true, HTMLAttributes: { class: "border-collapse w-full my-3" } }),
+      TableRow,
+      TableHeader,
+      TableCell,
+      Youtube.configure({ controls: true, nocookie: true, HTMLAttributes: { class: "rounded my-3 w-full aspect-video" } }),
     ],
     content: value || "",
     immediatelyRender: false,
@@ -64,7 +69,7 @@ export function RichEditor({
     editorProps: {
       attributes: {
         class:
-          "prose prose-invert max-w-none min-h-[300px] p-4 focus:outline-none [&_h1]:text-3xl [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-primary",
+          "prose prose-invert max-w-none min-h-[300px] p-4 focus:outline-none [&_h1]:text-3xl [&_h2]:text-2xl [&_h3]:text-xl [&_a]:text-primary [&_table]:border [&_th]:border [&_th]:p-2 [&_th]:bg-muted [&_td]:border [&_td]:p-2",
       },
     },
   });
