@@ -23,7 +23,7 @@ export function Hero() {
       <div className="absolute top-1/3 -left-20 h-72 w-72 rounded-full bg-primary/20 blur-[120px] animate-pulse-soft pointer-events-none" />
       <div className="absolute bottom-10 right-0 h-72 w-72 rounded-full bg-mint/15 blur-[120px] animate-pulse-soft pointer-events-none" />
 
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 glass rounded-full pl-2 pr-4 py-1.5 text-xs text-muted-foreground animate-fade-up">
             <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary">
