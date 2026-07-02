@@ -142,11 +142,9 @@ export function RichEditor({
   );
 }
 
+import DOMPurify from "isomorphic-dompurify";
+
 export function SafeHtml({ html, className }: { html: string; className?: string }) {
-  if (typeof window === "undefined") {
-    return <div className={className} dangerouslySetInnerHTML={{ __html: html }} />;
-  }
-  const DOMPurify = require("isomorphic-dompurify").default;
   const clean = DOMPurify.sanitize(html, { ADD_ATTR: ["target", "style"] });
   return <div className={className} dangerouslySetInnerHTML={{ __html: clean }} />;
 }
