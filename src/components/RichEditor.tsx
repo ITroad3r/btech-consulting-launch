@@ -9,12 +9,18 @@ import { TextStyle } from "@tiptap/extension-text-style";
 import { FontFamily } from "@tiptap/extension-font-family";
 import { Highlight } from "@tiptap/extension-highlight";
 import { Placeholder } from "@tiptap/extension-placeholder";
+import { Table } from "@tiptap/extension-table";
+import { TableRow } from "@tiptap/extension-table-row";
+import { TableCell } from "@tiptap/extension-table-cell";
+import { TableHeader } from "@tiptap/extension-table-header";
+import { Youtube } from "@tiptap/extension-youtube";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import {
   Bold, Italic, Underline as UIcon, Strikethrough, Heading1, Heading2, Heading3,
   List, ListOrdered, Quote, Code, Link as LinkIcon, Image as ImgIcon,
   AlignLeft, AlignCenter, AlignRight, Undo, Redo, Highlighter,
+  Table as TableIcon, Youtube as YoutubeIcon,
 } from "lucide-react";
 import { useRef } from "react";
 
