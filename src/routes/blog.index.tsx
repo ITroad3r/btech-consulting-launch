@@ -2,9 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Sections";
+import { Breadcrumbs, breadcrumbJsonLd } from "@/components/Breadcrumbs";
 import { ArrowUpRight } from "lucide-react";
 import { useT, useLang } from "@/i18n/LanguageProvider";
 import { supabase } from "@/integrations/supabase/client";
+
+const SITE_URL = "https://btech-consulting.com";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -13,13 +16,28 @@ export const Route = createFileRoute("/blog/")({
       { name: "description", content: "Read expert articles on IT audit, cybersecurity, digital transformation, and IT offshoring from the Btech Consulting team in Paris." },
       { property: "og:title", content: "IT Insights & Expert Articles | Btech Consulting Blog" },
       { property: "og:description", content: "Expert articles on IT audit, cybersecurity, digital transformation, and offshoring." },
-      { property: "og:url", content: "https://btech-consulting.com/blog" },
+      { property: "og:url", content: `${SITE_URL}/blog` },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:locale:alternate", content: "fr_FR" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "IT Insights & Expert Articles | Btech Consulting Blog" },
+      { name: "twitter:description", content: "Expert articles on IT audit, cybersecurity, digital transformation, and offshoring." },
     ],
-    links: [{ rel: "canonical", href: "https://btech-consulting.com/blog" }],
+    links: [
+      { rel: "canonical", href: `${SITE_URL}/blog` },
+      { rel: "alternate", hrefLang: "en", href: `${SITE_URL}/blog` },
+      { rel: "alternate", hrefLang: "fr", href: `${SITE_URL}/blog` },
+      { rel: "alternate", hrefLang: "x-default", href: `${SITE_URL}/blog` },
+    ],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify(breadcrumbJsonLd(SITE_URL, [{ name: "Blog", path: "/blog" }])),
+    }],
   }),
   component: BlogPage,
 });
+
 
 function BlogPage() {
   const t = useT();
