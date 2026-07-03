@@ -96,6 +96,7 @@ function ContactPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <Breadcrumbs items={[{ label: "Contact" }]} />
 
       <section className="pt-28 sm:pt-36 md:pt-40 pb-16 md:pb-20 px-4 sm:px-6">
         <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-12">
