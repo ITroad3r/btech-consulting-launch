@@ -81,7 +81,7 @@ function BlogPage() {
               const excerpt = (lang === "fr" ? p.excerpt_fr : p.excerpt_en) || "";
               return (
                 <Link key={p.id} to="/blog/$lang/$slug" params={{ lang, slug: p.slug }} className="group glass rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                  {p.cover_image_url && <img src={p.cover_image_url} alt="" className="h-44 w-full object-cover" />}
+                  {p.cover_image_url && <img src={p.cover_image_url} alt={title} loading="lazy" decoding="async" className="h-44 w-full object-cover" />}
                   <div className="p-7 flex-1 flex flex-col">
                     {p.tags?.[0] && <div className="text-[10px] uppercase tracking-[0.2em] text-primary font-medium">{p.tags[0]}</div>}
                     <h3 className="mt-3 font-display text-xl font-semibold leading-snug">{title}</h3>
