@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer, Contact } from "@/components/Sections";
+import { Breadcrumbs, breadcrumbJsonLd } from "@/components/Breadcrumbs";
 import { CheckCircle2 } from "lucide-react";
 import { useT } from "@/i18n/LanguageProvider";
+
+const SITE_URL = "https://btech-consulting.com";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -11,13 +14,28 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "Learn about Btech Consulting's story, mission, values, and the expert team behind our IT audit, consulting, and offshoring services in Paris, France." },
       { property: "og:title", content: "About Btech Consulting | IT Audit & Offshoring Experts — Paris" },
       { property: "og:description", content: "Our story, mission, values, and the expert team behind Btech Consulting in Paris." },
-      { property: "og:url", content: "https://btech-consulting.com/about" },
+      { property: "og:url", content: `${SITE_URL}/about` },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:locale:alternate", content: "fr_FR" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "About Btech Consulting | IT Audit & Offshoring Experts — Paris" },
+      { name: "twitter:description", content: "Our story, mission, values, and the expert team behind Btech Consulting in Paris." },
     ],
-    links: [{ rel: "canonical", href: "https://btech-consulting.com/about" }],
+    links: [
+      { rel: "canonical", href: `${SITE_URL}/about` },
+      { rel: "alternate", hrefLang: "en", href: `${SITE_URL}/about` },
+      { rel: "alternate", hrefLang: "fr", href: `${SITE_URL}/about` },
+      { rel: "alternate", hrefLang: "x-default", href: `${SITE_URL}/about` },
+    ],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify(breadcrumbJsonLd(SITE_URL, [{ name: "About", path: "/about" }])),
+    }],
   }),
   component: AboutPage,
 });
+
 
 
 function AboutPage() {
