@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Sections";
+import { Breadcrumbs, breadcrumbJsonLd } from "@/components/Breadcrumbs";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useT } from "@/i18n/LanguageProvider";
+
+const SITE_URL = "https://btech-consulting.com";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -11,18 +14,56 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Get in touch with Btech Consulting in Paris. Request a free consultation for IT audit, consulting, or offshoring services." },
       { property: "og:title", content: "Contact Btech Consulting | IT Audit & Offshoring — Paris" },
       { property: "og:description", content: "Request a free consultation for IT audit, consulting, or offshoring services." },
-      { property: "og:url", content: "https://btech-consulting.com/contact" },
+      { property: "og:url", content: `${SITE_URL}/contact` },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:locale:alternate", content: "fr_FR" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Contact Btech Consulting | IT Audit & Offshoring — Paris" },
+      { name: "twitter:description", content: "Request a free consultation for IT audit, consulting, or offshoring services." },
     ],
-    links: [{ rel: "canonical", href: "https://btech-consulting.com/contact" }],
+    links: [
+      { rel: "canonical", href: `${SITE_URL}/contact` },
+      { rel: "alternate", hrefLang: "en", href: `${SITE_URL}/contact` },
+      { rel: "alternate", hrefLang: "fr", href: `${SITE_URL}/contact` },
+      { rel: "alternate", hrefLang: "x-default", href: `${SITE_URL}/contact` },
+    ],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(breadcrumbJsonLd(SITE_URL, [{ name: "Contact", path: "/contact" }])),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact Btech Consulting",
+          url: `${SITE_URL}/contact`,
+          inLanguage: ["en", "fr"],
+          mainEntity: {
+            "@type": "Organization",
+            name: "Btech Consulting",
+            url: SITE_URL,
+            email: "contact@btech-consulting.com",
+            contactPoint: [{
+              "@type": "ContactPoint",
+              telephone: "+33 6 50 31 27 50",
+              email: "contact@btech-consulting.com",
+              contactType: "customer service",
+              areaServed: ["FR", "EU", "Worldwide"],
+              availableLanguage: ["English", "French"],
+            }],
+          },
+        }),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Btech Consulting",
-          url: "https://btech-consulting.com/contact",
+          url: `${SITE_URL}/contact`,
           email: "contact@btech-consulting.com",
           telephone: "+33 6 50 31 27 50",
           address: {
@@ -44,6 +85,7 @@ export const Route = createFileRoute("/contact")({
   }),
   component: ContactPage,
 });
+
 
 
 const icons = [MapPin, Mail, Phone];
