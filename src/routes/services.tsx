@@ -1,11 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer, Contact } from "@/components/Sections";
+import { Breadcrumbs, breadcrumbJsonLd } from "@/components/Breadcrumbs";
 import {
   FileSearch, ShieldCheck, Cloud, Database, Network, Code2, Headphones,
   TestTube2, BarChart3, ClipboardList, ArrowRight, Landmark, Handshake, SearchCheck,
 } from "lucide-react";
 import { useT } from "@/i18n/LanguageProvider";
+
+const SITE_URL = "https://btech-consulting.com";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -14,13 +17,28 @@ export const Route = createFileRoute("/services")({
       { name: "description", content: "IT audit, governance, cybersecurity, digital transformation, ERP advisory, DORA, M&A IT due diligence, and managed offshoring from Paris." },
       { property: "og:title", content: "IT Audit, Consulting & Offshoring Services | Btech Consulting" },
       { property: "og:description", content: "Full-spectrum IT audit, consulting, and offshoring services delivered from Paris." },
-      { property: "og:url", content: "https://btech-consulting.com/services" },
+      { property: "og:url", content: `${SITE_URL}/services` },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:locale:alternate", content: "fr_FR" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "IT Audit, Consulting & Offshoring Services | Btech Consulting" },
+      { name: "twitter:description", content: "Full-spectrum IT audit, consulting, and offshoring services delivered from Paris." },
     ],
-    links: [{ rel: "canonical", href: "https://btech-consulting.com/services" }],
+    links: [
+      { rel: "canonical", href: `${SITE_URL}/services` },
+      { rel: "alternate", hrefLang: "en", href: `${SITE_URL}/services` },
+      { rel: "alternate", hrefLang: "fr", href: `${SITE_URL}/services` },
+      { rel: "alternate", hrefLang: "x-default", href: `${SITE_URL}/services` },
+    ],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify(breadcrumbJsonLd(SITE_URL, [{ name: "Services", path: "/services" }])),
+    }],
   }),
   component: ServicesPage,
 });
+
 
 
 const auditIcons = [FileSearch, ShieldCheck, Cloud, Database, Network, Landmark, SearchCheck];
@@ -72,6 +90,7 @@ function ServicesPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <Breadcrumbs items={[{ label: sp.eyebrow }]} />
 
       <section className="pt-28 sm:pt-36 md:pt-40 pb-16 md:pb-20 px-4 sm:px-6">
         <div className="mx-auto max-w-4xl text-center">

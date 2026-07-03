@@ -42,6 +42,9 @@ export const Route = createFileRoute("/")({
         { property: "og:url", content: `${SITE_URL}/` },
         { property: "og:locale", content: "en_US" },
         { property: "og:locale:alternate", content: "fr_FR" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "Btech Consulting | IT Audit & Offshoring — Paris" },
+        { name: "twitter:description", content: "IT Audit, Strategic Consulting, and IT Offshoring — headquartered in Paris, serving Europe and beyond." },
       ],
       links: [
         { rel: "canonical", href: `${SITE_URL}/` },

@@ -2,9 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Sections";
+import { Breadcrumbs, breadcrumbJsonLd } from "@/components/Breadcrumbs";
 import { ArrowUpRight } from "lucide-react";
 import { useT, useLang } from "@/i18n/LanguageProvider";
 import { supabase } from "@/integrations/supabase/client";
+
+const SITE_URL = "https://btech-consulting.com";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -13,13 +16,28 @@ export const Route = createFileRoute("/blog/")({
       { name: "description", content: "Read expert articles on IT audit, cybersecurity, digital transformation, and IT offshoring from the Btech Consulting team in Paris." },
       { property: "og:title", content: "IT Insights & Expert Articles | Btech Consulting Blog" },
       { property: "og:description", content: "Expert articles on IT audit, cybersecurity, digital transformation, and offshoring." },
-      { property: "og:url", content: "https://btech-consulting.com/blog" },
+      { property: "og:url", content: `${SITE_URL}/blog` },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:locale:alternate", content: "fr_FR" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "IT Insights & Expert Articles | Btech Consulting Blog" },
+      { name: "twitter:description", content: "Expert articles on IT audit, cybersecurity, digital transformation, and offshoring." },
     ],
-    links: [{ rel: "canonical", href: "https://btech-consulting.com/blog" }],
+    links: [
+      { rel: "canonical", href: `${SITE_URL}/blog` },
+      { rel: "alternate", hrefLang: "en", href: `${SITE_URL}/blog` },
+      { rel: "alternate", hrefLang: "fr", href: `${SITE_URL}/blog` },
+      { rel: "alternate", hrefLang: "x-default", href: `${SITE_URL}/blog` },
+    ],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify(breadcrumbJsonLd(SITE_URL, [{ name: "Blog", path: "/blog" }])),
+    }],
   }),
   component: BlogPage,
 });
+
 
 function BlogPage() {
   const t = useT();
@@ -41,6 +59,7 @@ function BlogPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <Breadcrumbs items={[{ label: "Blog" }]} />
       <section className="pt-28 sm:pt-36 md:pt-40 pb-12 md:pb-16 px-4 sm:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary">
@@ -62,7 +81,7 @@ function BlogPage() {
               const excerpt = (lang === "fr" ? p.excerpt_fr : p.excerpt_en) || "";
               return (
                 <Link key={p.id} to="/blog/$lang/$slug" params={{ lang, slug: p.slug }} className="group glass rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                  {p.cover_image_url && <img src={p.cover_image_url} alt="" className="h-44 w-full object-cover" />}
+                  {p.cover_image_url && <img src={p.cover_image_url} alt={title} loading="lazy" decoding="async" className="h-44 w-full object-cover" />}
                   <div className="p-7 flex-1 flex flex-col">
                     {p.tags?.[0] && <div className="text-[10px] uppercase tracking-[0.2em] text-primary font-medium">{p.tags[0]}</div>}
                     <h3 className="mt-3 font-display text-xl font-semibold leading-snug">{title}</h3>
