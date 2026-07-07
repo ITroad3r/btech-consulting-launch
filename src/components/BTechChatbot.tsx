@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { MessageSquare, X, Minus, RotateCcw, Send, ArrowLeft } from "lucide-react";
-import botAvatar from "@/assets/bot-avatar.asset.json";
+import { ChatbotLogo } from "@/components/ChatbotLogo";
 
 /* ---------- palette (per spec) ---------- */
 const C = {
