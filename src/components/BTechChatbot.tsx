@@ -487,7 +487,7 @@ export function BTechChatbot() {
 
         {/* Active step controls, rendered under last bot message */}
         <div>
-          <StepUI />
+          {renderStep()}
         </div>
       </div>
 
