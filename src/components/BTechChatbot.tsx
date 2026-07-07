@@ -471,11 +471,7 @@ export function BTechChatbot() {
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-3" style={{ background: C.light }}>
         {messages.map((m) => (
           <div key={m.id} className={m.role === "bot" ? "flex gap-2 items-end" : "flex justify-end"}>
-            {m.role === "bot" && (
-              <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: C.white, border: "1px solid #E1EAF3" }}>
-                <ChatbotLogo size={22} variant="onLight" />
-              </div>
-            )}
+            {m.role === "bot" && <ChatbotLogo size={28} bg="white" padding={2} />}
             <div
               className={"rounded-2xl px-3 py-2 text-sm max-w-[80%] whitespace-pre-wrap " + (m.role === "bot" ? "" : "text-white")}
               style={
