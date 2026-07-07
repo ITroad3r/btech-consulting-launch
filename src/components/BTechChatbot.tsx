@@ -479,8 +479,8 @@ export function BTechChatbot() {
         {messages.map((m) => (
           <div key={m.id} className={m.role === "bot" ? "flex gap-2 items-end" : "flex justify-end"}>
             {m.role === "bot" && (
-              <div className="w-7 h-7 rounded-full flex items-center justify-center overflow-hidden shrink-0" style={{ background: C.white, border: "1px solid #E1EAF3" }}>
-                <img src={botAvatar.url} alt="" className="w-6 h-6 object-contain" />
+              <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: C.white, border: "1px solid #E1EAF3" }}>
+                <ChatbotLogo size={22} variant="onLight" />
               </div>
             )}
             <div
