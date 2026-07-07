@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
+import { BTechChatbot } from "@/components/BTechChatbot";
 
 function NotFoundComponent() {
   return (
@@ -125,12 +126,20 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <Outlet />
+        <ChatbotMount />
       </LanguageProvider>
     </QueryClientProvider>
   );
 }
+
+function ChatbotMount() {
+  const router = useRouter();
+  const path = router.state.location.pathname;
+  if (path.startsWith("/admin") || path.startsWith("/login")) return null;
+  return <BTechChatbot />;
+}
+

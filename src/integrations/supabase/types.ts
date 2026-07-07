@@ -95,6 +95,75 @@ export type Database = {
         }
         Relationships: []
       }
+      leads: {
+        Row: {
+          assigned_to: string | null
+          company_name: string | null
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          internal_notes: string | null
+          lead_type: string
+          need_description: string | null
+          page_url: string | null
+          phone: string | null
+          preferred_contact_method: string | null
+          preferred_date_time: string | null
+          selected_service: string | null
+          service_pillar: string | null
+          source: string
+          status: string
+          updated_at: string
+          urgency: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          assigned_to?: string | null
+          company_name?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          internal_notes?: string | null
+          lead_type: string
+          need_description?: string | null
+          page_url?: string | null
+          phone?: string | null
+          preferred_contact_method?: string | null
+          preferred_date_time?: string | null
+          selected_service?: string | null
+          service_pillar?: string | null
+          source?: string
+          status?: string
+          updated_at?: string
+          urgency?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          assigned_to?: string | null
+          company_name?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          internal_notes?: string | null
+          lead_type?: string
+          need_description?: string | null
+          page_url?: string | null
+          phone?: string | null
+          preferred_contact_method?: string | null
+          preferred_date_time?: string | null
+          selected_service?: string | null
+          service_pillar?: string | null
+          source?: string
+          status?: string
+          updated_at?: string
+          urgency?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       site_content: {
         Row: {
           description: string | null

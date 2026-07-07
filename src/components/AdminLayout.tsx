@@ -3,7 +3,7 @@ import { useAuth, useIsAdmin } from "@/lib/auth";
 import { supabase } from "@/integrations/supabase/client";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { LayoutDashboard, FileText, Settings, FileEdit, LogOut, ExternalLink } from "lucide-react";
+import { LayoutDashboard, FileText, Settings, FileEdit, LogOut, ExternalLink, Inbox } from "lucide-react";
 
 export function AdminLayout() {
   const navigate = useNavigate();
@@ -41,6 +41,7 @@ export function AdminLayout() {
 
   const links = [
     { to: "/admin", label: "Dashboard", icon: LayoutDashboard },
+    { to: "/admin/leads", label: "Leads", icon: Inbox },
     { to: "/admin/blog", label: "Blog", icon: FileText },
     { to: "/admin/content", label: "Site Content", icon: FileEdit },
     { to: "/admin/settings", label: "Settings", icon: Settings },
