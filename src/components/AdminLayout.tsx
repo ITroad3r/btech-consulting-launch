@@ -41,6 +41,7 @@ export function AdminLayout() {
 
   const links = [
     { to: "/admin", label: "Dashboard", icon: LayoutDashboard },
+    { to: "/admin/leads", label: "Leads", icon: Inbox },
     { to: "/admin/blog", label: "Blog", icon: FileText },
     { to: "/admin/content", label: "Site Content", icon: FileEdit },
     { to: "/admin/settings", label: "Settings", icon: Settings },
