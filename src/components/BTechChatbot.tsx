@@ -330,7 +330,7 @@ export function BTechChatbot() {
   }, [data.lead_type]);
 
   /* ---------- current step UI ---------- */
-  const StepUI = () => {
+  const renderStep = () => {
     switch (step) {
       case "welcome":
         return (
