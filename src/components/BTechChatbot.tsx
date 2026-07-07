@@ -433,10 +433,10 @@ export function BTechChatbot() {
         aria-label="Open BTech Consulting chat"
       >
         <span
-          className="w-9 h-9 rounded-full flex items-center justify-center overflow-hidden"
+          className="w-10 h-10 rounded-full flex items-center justify-center shadow-inner"
           style={{ background: C.white }}
         >
-          <img src={botAvatar.url} alt="" className="w-8 h-8 object-contain" />
+          <ChatbotLogo size={28} variant="onLight" />
         </span>
         <span className="flex flex-col text-left leading-tight">
           <span className="text-sm font-semibold">Talk to us</span>
