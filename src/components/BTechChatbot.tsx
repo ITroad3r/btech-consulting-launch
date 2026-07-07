@@ -454,8 +454,8 @@ export function BTechChatbot() {
       style={{ background: C.white, border: "1px solid #E1EAF3" }}>
       {/* Header */}
       <div className="flex items-center gap-3 px-4 py-3" style={{ background: C.navy, color: C.white }}>
-        <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center overflow-hidden">
-          <img src={botAvatar.url} alt="" className="w-8 h-8 object-contain" />
+        <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center shrink-0">
+          <ChatbotLogo size={28} variant="onDark" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-sm font-semibold truncate">BTech Consulting</div>
