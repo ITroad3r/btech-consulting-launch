@@ -432,12 +432,7 @@ export function BTechChatbot() {
         style={{ background: C.medium }}
         aria-label="Open BTech Consulting chat"
       >
-        <span
-          className="w-10 h-10 rounded-full flex items-center justify-center shadow-inner"
-          style={{ background: C.white }}
-        >
-          <ChatbotLogo size={28} variant="onLight" />
-        </span>
+        <ChatbotLogo size={32} bg="white" padding={3} />
         <span className="flex flex-col text-left leading-tight">
           <span className="text-sm font-semibold">Talk to us</span>
           <span className="text-[10px] flex items-center gap-1 opacity-90">
