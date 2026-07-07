@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { MessageSquare, X, Minus, RotateCcw, Send, ArrowLeft } from "lucide-react";
-import botAvatar from "@/assets/bot-avatar.asset.json";
+import { ChatbotLogo } from "@/components/ChatbotLogo";
 
 /* ---------- palette (per spec) ---------- */
 const C = {
@@ -433,10 +433,10 @@ export function BTechChatbot() {
         aria-label="Open BTech Consulting chat"
       >
         <span
-          className="w-9 h-9 rounded-full flex items-center justify-center overflow-hidden"
+          className="w-10 h-10 rounded-full flex items-center justify-center shadow-inner"
           style={{ background: C.white }}
         >
-          <img src={botAvatar.url} alt="" className="w-8 h-8 object-contain" />
+          <ChatbotLogo size={28} variant="onLight" />
         </span>
         <span className="flex flex-col text-left leading-tight">
           <span className="text-sm font-semibold">Talk to us</span>
@@ -454,8 +454,8 @@ export function BTechChatbot() {
       style={{ background: C.white, border: "1px solid #E1EAF3" }}>
       {/* Header */}
       <div className="flex items-center gap-3 px-4 py-3" style={{ background: C.navy, color: C.white }}>
-        <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center overflow-hidden">
-          <img src={botAvatar.url} alt="" className="w-8 h-8 object-contain" />
+        <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center shrink-0">
+          <ChatbotLogo size={28} variant="onDark" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-sm font-semibold truncate">BTech Consulting</div>
@@ -479,8 +479,8 @@ export function BTechChatbot() {
         {messages.map((m) => (
           <div key={m.id} className={m.role === "bot" ? "flex gap-2 items-end" : "flex justify-end"}>
             {m.role === "bot" && (
-              <div className="w-7 h-7 rounded-full flex items-center justify-center overflow-hidden shrink-0" style={{ background: C.white, border: "1px solid #E1EAF3" }}>
-                <img src={botAvatar.url} alt="" className="w-6 h-6 object-contain" />
+              <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: C.white, border: "1px solid #E1EAF3" }}>
+                <ChatbotLogo size={22} variant="onLight" />
               </div>
             )}
             <div
