@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
+import { BTechChatbot } from "@/components/BTechChatbot";
 
 function NotFoundComponent() {
   return (
