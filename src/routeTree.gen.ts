@@ -21,6 +21,7 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AdminLeadsRouteImport } from './routes/admin.leads'
 import { Route as AdminContentRouteImport } from './routes/admin.content'
 import { Route as AdminBlogRouteImport } from './routes/admin.blog'
 import { Route as BlogLangSlugRouteImport } from './routes/blog.$lang.$slug'
@@ -86,6 +87,11 @@ const AdminSettingsRoute = AdminSettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminLeadsRoute = AdminLeadsRouteImport.update({
+  id: '/leads',
+  path: '/leads',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminContentRoute = AdminContentRouteImport.update({
   id: '/content',
   path: '/content',
@@ -118,6 +124,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/blog': typeof AdminBlogRouteWithChildren
   '/admin/content': typeof AdminContentRoute
+  '/admin/leads': typeof AdminLeadsRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/admin/': typeof AdminIndexRoute
@@ -134,6 +141,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/blog': typeof AdminBlogRouteWithChildren
   '/admin/content': typeof AdminContentRoute
+  '/admin/leads': typeof AdminLeadsRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/admin': typeof AdminIndexRoute
@@ -153,6 +161,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/blog': typeof AdminBlogRouteWithChildren
   '/admin/content': typeof AdminContentRoute
+  '/admin/leads': typeof AdminLeadsRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/admin/': typeof AdminIndexRoute
@@ -173,6 +182,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/blog'
     | '/admin/content'
+    | '/admin/leads'
     | '/admin/settings'
     | '/blog/$slug'
     | '/admin/'
@@ -189,6 +199,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/blog'
     | '/admin/content'
+    | '/admin/leads'
     | '/admin/settings'
     | '/blog/$slug'
     | '/admin'
@@ -207,6 +218,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/blog'
     | '/admin/content'
+    | '/admin/leads'
     | '/admin/settings'
     | '/blog/$slug'
     | '/admin/'
@@ -312,6 +324,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSettingsRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/leads': {
+      id: '/admin/leads'
+      path: '/leads'
+      fullPath: '/admin/leads'
+      preLoaderRoute: typeof AdminLeadsRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/content': {
       id: '/admin/content'
       path: '/content'
@@ -358,6 +377,7 @@ const AdminBlogRouteWithChildren = AdminBlogRoute._addFileChildren(
 interface AdminRouteChildren {
   AdminBlogRoute: typeof AdminBlogRouteWithChildren
   AdminContentRoute: typeof AdminContentRoute
+  AdminLeadsRoute: typeof AdminLeadsRoute
   AdminSettingsRoute: typeof AdminSettingsRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
@@ -365,6 +385,7 @@ interface AdminRouteChildren {
 const AdminRouteChildren: AdminRouteChildren = {
   AdminBlogRoute: AdminBlogRouteWithChildren,
   AdminContentRoute: AdminContentRoute,
+  AdminLeadsRoute: AdminLeadsRoute,
   AdminSettingsRoute: AdminSettingsRoute,
   AdminIndexRoute: AdminIndexRoute,
 }
