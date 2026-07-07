@@ -330,7 +330,7 @@ export function BTechChatbot() {
   }, [data.lead_type]);
 
   /* ---------- current step UI ---------- */
-  const StepUI = () => {
+  const renderStep = () => {
     switch (step) {
       case "welcome":
         return (
@@ -487,7 +487,7 @@ export function BTechChatbot() {
 
         {/* Active step controls, rendered under last bot message */}
         <div>
-          <StepUI />
+          {renderStep()}
         </div>
       </div>
 
