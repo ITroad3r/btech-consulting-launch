@@ -9,8 +9,9 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import { LanguageProvider } from "@/i18n/LanguageProvider";
+import { LanguageProvider, useLang } from "@/i18n/LanguageProvider";
 import { BTechChatbot } from "@/components/BTechChatbot";
+import { BtechWhatsAppButton } from "@/components/site/BtechWhatsAppButton";
 
 function NotFoundComponent() {
   return (
