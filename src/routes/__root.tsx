@@ -132,6 +132,7 @@ function RootComponent() {
       <LanguageProvider>
         <Outlet />
         <ChatbotMount />
+        <WhatsAppMount />
       </LanguageProvider>
     </QueryClientProvider>
   );
@@ -142,5 +143,13 @@ function ChatbotMount() {
   const path = router.state.location.pathname;
   if (path.startsWith("/admin") || path.startsWith("/login")) return null;
   return <BTechChatbot />;
+}
+
+function WhatsAppMount() {
+  const { lang } = useLang();
+  const router = useRouter();
+  const path = router.state.location.pathname;
+  if (path.startsWith("/admin") || path.startsWith("/login")) return null;
+  return <BtechWhatsAppButton language={lang} />;
 }
 
