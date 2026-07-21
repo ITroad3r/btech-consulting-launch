@@ -9,8 +9,9 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import { LanguageProvider } from "@/i18n/LanguageProvider";
+import { LanguageProvider, useLang } from "@/i18n/LanguageProvider";
 import { BTechChatbot } from "@/components/BTechChatbot";
+import { BtechWhatsAppButton } from "@/components/site/BtechWhatsAppButton";
 
 function NotFoundComponent() {
   return (
@@ -131,6 +132,7 @@ function RootComponent() {
       <LanguageProvider>
         <Outlet />
         <ChatbotMount />
+        <WhatsAppMount />
       </LanguageProvider>
     </QueryClientProvider>
   );
@@ -141,5 +143,13 @@ function ChatbotMount() {
   const path = router.state.location.pathname;
   if (path.startsWith("/admin") || path.startsWith("/login")) return null;
   return <BTechChatbot />;
+}
+
+function WhatsAppMount() {
+  const { lang } = useLang();
+  const router = useRouter();
+  const path = router.state.location.pathname;
+  if (path.startsWith("/admin") || path.startsWith("/login")) return null;
+  return <BtechWhatsAppButton language={lang} />;
 }
 
